@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/freeroom/freeroom",
+    "pages/auditing/auditing",
+    "pages/invitations/invitations"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/invitations/invitations",
+        "text": "约自习",
+        "iconPath": "images/icon1.png",
+        "selectedIconPath": "images/icon1_.png"
+      },
+      {
+        "pagePath": "pages/freeroom/freeroom",
+        "text": "查教室",
+        "iconPath": "images/icon2.png",
+        "selectedIconPath": "images/icon2_.png"
+      },
+      {
+        "pagePath": "pages/auditing/auditing",
+        "text": "蹭一蹭",
+        "iconPath": "images/icon3.png",
+        "selectedIconPath": "images/icon3_.png"
+      }
+    ]
+  }
+}
