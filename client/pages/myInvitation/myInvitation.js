@@ -1,16 +1,11 @@
-// pages/invitations/invitations.js
-const api = require('../../config/config.js');
-const app = getApp();
-const debug = app["debug"];
-
+// pages/myInvitation/myInvitation.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    showLoading: true,
-    logined: false
+
   },
 
   /**
@@ -67,18 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /*登录*/
-  doLogin: function (callback = ()=>{}) {
-    let that = this;
-    wx.login({
-      success(loginRes) {
-        if(loginRes.code) {
-
-        }
-      }
-    })
   }
-
 })

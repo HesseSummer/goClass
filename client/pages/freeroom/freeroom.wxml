@@ -1,2 +1,64 @@
 <!--pages/freeroom/freeroom.wxml-->
-<text>pages/freeroom/freeroom.wxml</text>
+<view class='container'>
+  <view>
+    <view class='flex t-black date'>日期：{{date}}</view>
+  </view>
+  <view class='header'>
+    <view class='flex-row'>
+      <view class="pushright">教学楼</view> 
+      <view class='flex-row'>
+        <button wx:for="{{b1list}}" class="bt-header" 
+        style="{{index == id1 ? 'background-color: #333333;color: white;' : 'background-color: #f8f8f8'}}"
+        bindtap='changeB1' data-msg="{{item}}" data-id="{{index}}">{{item}}</button>
+      </view>  
+    </view>
+    
+    <view class='flex-row'>
+      <view class="pushright">楼栋</view> 
+      <view class='flex-row'>
+        <button wx:for="{{b2list}}" class="bt-header" disabled='{{B2selectable ? false: true}}'
+        style="{{B2selectable && index == id2 ? 'background-color: #333333;color: white;' : 'background-color: #f8f8f8'}}"
+        bindtap='changeB2' data-msg="{{item}}" data-id="{{index}}">{{item}}</button>
+      </view>  
+    </view>
+
+    <view class='flex-row'>
+      <view class="pushright">楼层</view> 
+      <view class='flex-row'>
+        <button wx:for="{{b3list}}" class="bt-header" 
+        style="{{index == id3 ? 'background-color: #333333;color: white;' : 'background-color: #f8f8f8'}}"
+        disabled='{{index==4 && f5selectable==false? true: false}}'
+        bindtap='changeB3' data-msg="{{item}}" data-id="{{index}}">{{item}}</button>
+      </view>  
+    </view>
+    <view>
+      <button class='bt-access' bindtap="access">点击获取</button>
+    </view>
+  </view>
+  <scroll-view class='Timetable'>
+    <view class='swaper-tt flex-row'>
+      <view class='left'>
+      <view class='title'>教室</view>
+      <view class="room" wx:for="{{roomli}}">{{item}}</view>
+    </view>
+
+    <view class='right'>
+      <view class='title'>
+        <view wx:for="{{['1~2','3~4','5~6','7~8','9~11']}}" class='t-item'>{{item}}节</view>
+      </view>
+      <view class='flex body-courseli'>
+        <view wx:for="{{courseli}}" wx:for-item="first" class="line">
+          <view class='flex-row'>
+            <view wx:for="{{first}}" wx:for-item="second" class='c-common free{{second}}'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </view>
+  </scroll-view>
+
+  <picker mode="date" value="{{date}}" start="2019-02-18" end="2019-07-06" bindchange="bindDateChange">
+    <button class='bt-access'>更改日期，重新获取 {{date}}</button>
+  </picker>  
+  <view class='hint'><text class='t-green'>绿色</text>表示该教室在该时段空闲，<text class='t-gray'>灰色</text>表示被占用</view>
+</view>

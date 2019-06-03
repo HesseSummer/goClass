@@ -1,10 +1,63 @@
 /**app.wxss**/
-.container {
-  height: 100%;
+.bg-blue {
+  background-color: #b9dceb;
+}
+.bg-gray {
+  background-color: #e7e4e4;
+}
+.bg-green {
+  background-color: #00c777;
+}
+.t-green {
+  color: #00c777;
+}
+.t-blue {
+  color: #b9dceb;
+}
+.t-black {
+  color: #333333;
+}
+.t-gray {
+  color: gray;
+}
+.border-gray {
+  color: #c5c3c3;
+}
+.hint {
+  margin-top: 5px;
+  text-align: right;
+  font-size: 12px;
+  text-decoration:underline;
+}
+/*甜甜圈loading start*/
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.donut {
+  height: 60rpx;
+  width: 60rpx;
+  border: 4rpx solid #333333;
+  border-radius: 50%;
+  animation: donut-spin 0.5s linear infinite;
+}
+
+.flex {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.flex-row {
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+button::after {
+  border: none;
+}

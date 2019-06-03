@@ -2,7 +2,8 @@
   "pages": [
     "pages/freeroom/freeroom",
     "pages/auditing/auditing",
-    "pages/invitations/invitations"
+    "pages/invitations/invitations",
+    "pages/myInvitation/myInvitation"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,5 +34,6 @@
         "selectedIconPath": "images/icon3_.png"
       }
     ]
-  }
+  },
+  "debug": true
 }

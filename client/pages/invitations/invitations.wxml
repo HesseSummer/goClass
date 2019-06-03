@@ -1,2 +1,25 @@
 <!--pages/invitations/invitations.wxml-->
-<text>pages/invitations/invitations.wxml</text>
+<!--登录-->
+<block wx:if="{{!logined}}">
+  <view>
+    <text>为了给您提供更好地服务，请先登录</text>
+    <view class="bg-blue" bindtap="doLogin">
+      <button >一键登录</button>
+    </view>
+  </view>
+</block>
+
+<!--广场页面-->
+<block wx:else>
+  <!--加载数据-->
+  <block wx:if="{{showLoading}}">
+    <view class='donut-container'>
+      <view class='donut'></view>
+    </view>
+  </block>
+  <!--加载完毕-->
+  <block wx:else>
+
+  </block>
+</block>
+
