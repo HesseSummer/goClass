@@ -1,12 +1,21 @@
+/*iconfont*/
+@import "iconfont.wxss";
+
 /**app.wxss**/
 .bg-blue {
-  background-color: #b9dceb;
+  background-color: #add8e6;
 }
 .bg-gray {
   background-color: #e7e4e4;
 }
 .bg-green {
   background-color: #00c777;
+}
+.bg-black {
+  background-color: #333333;
+}
+.t-white{
+  color: white;
 }
 .t-green {
   color: #00c777;
@@ -58,6 +67,13 @@
   justify-content: flex-start;
   align-content: flex-start;
 }
+.flex-mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 button::after {
   border: none;
+  margin: 0;
 }

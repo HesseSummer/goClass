@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "约自习"
+  "navigationBarTitleText": "约自习",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }

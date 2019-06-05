@@ -1,25 +1,101 @@
-<!--pages/invitations/invitations.wxml-->
-<!--登录-->
-<block wx:if="{{!logined}}">
-  <view>
-    <text>为了给您提供更好地服务，请先登录</text>
-    <view class="bg-blue" bindtap="doLogin">
-      <button >一键登录</button>
+<view class='flex-mid topbar'>
+  <text wx:for="{{toptab}}" class="tabName tabtitle {{currentTab==index ? 'select-t' : ''}}"
+        bindtap="changetab" data-id="{{index}}"
+  >{{item}}</text>
+</view>
+
+<swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{tbodyHeight-35}}px">
+  <!--topbar高35px-->
+  <!--广场-->
+  <swiper-item>
+
+
+    <view class='wrapper_s'>
+      <!--搜索-->
+      <form bindsubmit='formSubmit' class='form flex-mid'>
+        <view class='wrapper_input'>
+          <view class="iconfont icon-sousuo-tianchong icon_s"></view>
+          <input type='text' name="keyword" class='input_search' placeholder='输入关键词搜索' />
+        </view>
+        <button form-type='submit' class='btn_search'>搜索</button>
+        <button class='btn_search' bindtap="showall">全部</button>
+      </form>
     </view>
-  </view>
-</block>
+    <!--搜索结果-->
+    <scroll-view style="height: {{tbodyHeight-35-55}}px" scroll-y scroll-with-animation>
+      <!--wrapper_s占据55px-->
+      <view class='resultshow'>
+        <!--显示全部-->
+        <block wx:if="{{reshow == 1}}">
+          <block wx:for="{{invitations}}" wx:key="inv">
+            <view class='wrapper-inv flex-mid'>
+              <view class='inv'>
+                <view class='line1'>
+                  <text class='wrappertags'>
+                      <text class="usex iconfont {{item.sex == '男'? 'icon-nan': 'icon-nv'}}"></text>
+                  <text class='uname'>{{item.user_name}} </text>
+                  <text class='umajor'>{{item.major}}</text>
+                  </text>
 
-<!--广场页面-->
-<block wx:else>
-  <!--加载数据-->
-  <block wx:if="{{showLoading}}">
-    <view class='donut-container'>
-      <view class='donut'></view>
+                </view>
+                <view class='line2'>{{item.illustration}}</view>
+                <view class='line3 flex-row'>
+                  <view wx:for="{{item.keywords}}" wx:for-item="keyword">
+                    <text class="word">{{keyword}}</text>
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+          </block>
+        </block>
+
+        <!--显示搜索结果-->
+        <block wx:elif="{{reshow == 2}}">
+          <block wx:for="{{invitations}}" wx:key="inv">
+            <view class='wrapper-inv flex-mid'>
+              <view class='inv'>
+                <view class='line1'>
+                  <text class='wrappertags'>
+                      <text class="usex iconfont {{item.sex == '男'? 'icon-nan': 'icon-nv'}}"></text>
+                  <text class='uname'>{{item.user_name}} </text>
+                  <text class='umajor'>{{item.major}}</text>
+                  </text>
+
+                </view>
+                <view class='line2'>{{item.illustration}}</view>
+                <view class='line3 flex-row'>
+                  <view wx:for="{{item.keywords}}" wx:for-item="keyword">
+                    <text class="word">{{keyword}}</text>
+                  </view>
+                </view>
+
+              </view>
+
+            </view>
+          </block>
+        </block>
+
+        <!--没有结果-->
+        <block wx:else>
+          <view class='flex-mid noresult'>
+            <text class='t-black'>无匹配结果</text>
+          </view>
+        </block>
+
+
+      </view>
+    </scroll-view>
+
+
+
+  </swiper-item>
+
+  <!--我的-->
+  <swiper-item>
+    <view>
+
     </view>
-  </block>
-  <!--加载完毕-->
-  <block wx:else>
-
-  </block>
-</block>
-
+  </swiper-item>
+</swiper>

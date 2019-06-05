@@ -32,8 +32,16 @@ App({
         }
       }
     })
+    // 获取屏幕高度
+    let that=this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.globalData.windowHeight = res.windowHeight
+      }
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    windowHeight: null
   }
 })
