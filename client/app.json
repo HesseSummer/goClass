@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/invitations/invitations",
+    "pages/index/index",
     "pages/freeroom/freeroom",
+    "pages/invitations/invitations",
     "pages/auditing/auditing",
-    "pages/myInvitation/myInvitation",
-    "pages/index",
-    "pages/index/index"
+    "pages/myInvitation/myInvitation"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

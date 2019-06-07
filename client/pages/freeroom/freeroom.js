@@ -31,16 +31,18 @@ Page({
   },
   // 不完善版本，只能计算当天是第几周第几天
   getweek_detail: function () {
+    
     let str0 = new Date(2019, 1, 18); //第一周第一天为2.18
-    let str = new Date(); //待计算的时间
+    let str = new Date(this.data.date); //待计算的时间
     let distance = Math.round((str.valueOf() - str0.valueOf()) / 86400000);
     let w = Math.ceil(distance / 7);
+    w === 0 ? w = 1 : null;
     return w;
   }
   ,
   // 不完善版本，只能计算当天是第几周第几天
   getweekday: function () {
-    let d = new Date().getDay();
+    let d = new Date(this.data.date).getDay();
     return d;
   },
   changeB1: function (event) {
@@ -164,12 +166,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    /**调用函数时，传入new Date()参数，返回值是日期和时间
+    //调用函数时，传入new Date()参数，返回值是日期和时间
      var time = util.formatTime(new Date());
      // 再通过setData更改Page()里面的data，动态更新页面的数据
      this.setData({
-time: time
-});**/
+      time: time
+    });
   },
 
   /**

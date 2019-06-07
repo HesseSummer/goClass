@@ -101,7 +101,7 @@ Page({
       let major = item.major;
       let illustration = item.illustration;
       let keywords = [];
-      keywords = item.key_words.split(',');
+      keywords = item.key_words && item.key_words.split(',');
       let inv = {
         user_name,
         sex,

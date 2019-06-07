@@ -12,7 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
-    // 获取用户信息
+    /*// 获取用户信息
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -31,7 +31,7 @@ App({
           })
         }
       }
-    })
+    })*/
     // 获取屏幕高度
     let that=this;
     wx.getSystemInfo({
@@ -42,6 +42,9 @@ App({
   },
   globalData: {
     userInfo: null,
-    windowHeight: null
+    windowHeight: null,
+    user_id: '',
+    user_name: '',
+    rawInfo: {},
   }
 })
