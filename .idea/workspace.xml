@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd3cd46b-6449-4238-9924-a2f8a3942aec" name="Default Changelist" comment="1">
+    <list default="true" id="dd3cd46b-6449-4238-9924-a2f8a3942aec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/GoClass/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/GoClassApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/InvitationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/ScheduleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/WXLoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/Invitation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/Schedule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/model/WXSessionModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/InvitationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/ScheduleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/InvitationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/ScheduleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/InvitationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/ScheduleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/AppUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/HttpClientUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/HttpUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/IMoocJSONResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/JsonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/JsonUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/ResultCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -16,13 +52,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/HelloController.java">
+        <entry file="file://$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="171">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -30,7 +63,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/server/GoClass" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -85,13 +118,6 @@
               <item name="项目" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -100,7 +126,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="项目" type="b2602c69:ProjectViewProjectNode" />
@@ -108,7 +134,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -117,7 +143,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -127,7 +153,7 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="weixin" type="462c0819:PsiDirectoryNode" />
@@ -138,24 +164,11 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="weixin" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="weixin" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -169,7 +182,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560165335975" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560165535923" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -203,7 +216,7 @@
       <workItem from="1559568217743" duration="187000" />
       <workItem from="1559621901195" duration="1264000" />
       <workItem from="1560159503943" duration="379000" />
-      <workItem from="1560161573738" duration="768000" />
+      <workItem from="1560161573738" duration="1012000" />
     </task>
     <task id="LOCAL-00001" summary="查空教室页面，待重构、添加背景">
       <created>1560161725659</created>
@@ -219,17 +232,32 @@
       <option name="project" value="LOCAL" />
       <updated>1560162041231</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1">
+      <created>1560165307119</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1560165307119</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1">
+      <created>1560165365891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1560165365891</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2598000" />
+    <option name="totallyTimeSpent" value="2842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25670242" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.25670242" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.5021097" side_tool="true" visible="true" weight="0.25670242" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -244,7 +272,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
@@ -284,5 +312,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/AppUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>goClass</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
