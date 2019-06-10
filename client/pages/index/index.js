@@ -10,7 +10,8 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isHide: false
+    isHide: false,
+    windowHeight: app.globalData.windowHeight
   },
   /**
    * 生命周期函数--监听页面加载

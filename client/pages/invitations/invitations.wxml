@@ -9,7 +9,7 @@
   <!--广场-->
   <swiper-item>
 
-
+    
     <view class='wrapper_s'>
       <!--搜索-->
       <form bindsubmit='formSubmit' class='form flex-mid'>
@@ -40,7 +40,7 @@
                 </view>
                 <view class='line2'>{{item.illustration}}</view>
                 <view class='line3 flex-row'>
-                  <view wx:for="{{item.keywords}}" wx:for-item="keyword">
+                  <view wx:for="{{item.key_words}}" wx:for-item="keyword">
                     <text class="word">{{keyword}}</text>
                   </view>
                 </view>
@@ -66,7 +66,7 @@
                 </view>
                 <view class='line2'>{{item.illustration}}</view>
                 <view class='line3 flex-row'>
-                  <view wx:for="{{item.keywords}}" wx:for-item="keyword">
+                  <view wx:for="{{item.key_words}}" wx:for-item="keyword">
                     <text class="word">{{keyword}}</text>
                   </view>
                 </view>
@@ -93,9 +93,42 @@
   </swiper-item>
 
   <!--我的-->
-  <swiper-item>
-    <view>
+  <swiper-item class="flex-mid">
+    <scroll-view scroll-y scroll-with-animation 
+                 class='wrapper-my {{empty === 1? "empty": ""}}'
+                 style='height: {{tbodyHeight-35}}px'>
+      <view wx:for="{{myinvs}}" class="icon-inv">
+        <view class='icons'>
+          <view class="icon1" bindtap='deleteinv' data-id='{{item.invitation_id}}' data-index='{{index}}'><text class='iconfont icon-shanchu'></text></view>
+          <view class='icon2' bindtap='editinv' 
+          data-id='{{item.invitation_id}}' data-index='{{index}}'
+          data-uname='{{item.user_name}}' data-sex='{{item.sex}}'
+          data-major='{{item.major}}' data-illu='{{item.illustration}}'
+          data-keywords='{{item.key_words}}' data-contact='{{item.contact_information}}'
+          ><text class='iconfont icon-bianji'></text></view>
+        </view>
+        <view class='my-wrapper-inv'>
+          <view class='my-inv'>
+            <view class='line1'>
+              <text class='wrappertags'>
+                <text class="usex iconfont {{item.sex == '男'? 'icon-nan': 'icon-nv'}}"></text>
+                <text class='uname'>{{item.user_name}} </text>
+                <text class='umajor'>{{item.major}}</text>
+              </text>
 
-    </view>
+            </view>
+            <view class='line2'>{{item.illustration}}</view>
+            <view class='line3 flex-row'>
+              <view wx:for="{{item.key_words}}" wx:for-item="keyword">
+                <text class="word">{{keyword}}</text>
+              </view>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+
+    </scroll-view>
   </swiper-item>
 </swiper>

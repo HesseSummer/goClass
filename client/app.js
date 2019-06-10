@@ -37,6 +37,7 @@ App({
     wx.getSystemInfo({
       success: function (res) {
         that.globalData.windowHeight = res.windowHeight
+        console.log(that.globalData.windowHeight)
       }
     })
   },

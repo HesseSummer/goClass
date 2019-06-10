@@ -14,6 +14,14 @@
   url('iconfont.ttf?t=1559709177382') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('iconfont.svg?t=1559709177382#iconfont') format('svg'); /* iOS 4.1- */
 }
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1560000223958'); /* IE9 */
+  src: url('iconfont.eot?t=1560000223958#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANYAAsAAAAAB4wAAAMKAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCcIJDATYCJAMMCwgABCAFhG0HOhuNBlGUzUWd7IsC25gmfBGJZfTgQstJQrM9S40HO2Gff9Px8LXf79zd/aoNkmiELB5JDEk0MZ1KYkjQaJFWrYS3/2sboiXt9RMgkkyT9pP9E98Ne52WSQVChNCYfn+1MNPmbVJIZpXfNlU26UK7JCQo/dkSbi5fA/xnZ65qdZ+4d9r0ATSfZTmtvSn61AUYBxTYWJMiK5CAvGV47WI6yOME2hZpKkeO3RHaCjwuEM85z4J2xqI01IemUK9YWsQntGZ6T2/gI/h+/BsEjqSW4annT3MXRj/5n1oGFRD0SKTTuaCsImMLKMRVpedSLcpsqWlbmnpzeV0R0lTxKgKJratv9I+XiDpc2wVrkE385JmA4Ke2QgIZ1FHuBXgDw3RosnSXloZIeFrja3gErORocOpyE9OL1AxYWnzaKA/fCvT6x0mumXlgkQYHWAFHInV4AY+0O6kuYlGpiUDRGGry3oAcRCapI/UsLnFs8r5WNrARo8PgBPe4KpBcydH+kmZ8Bb9/d9cTKAS9yyqZLqRTomHep5lo3Aw3RSYXpaTm1cWFuCYWhL10NBAR0SlX3gDXDheKgijE/epL/mLSAd1ynvczn17LzM/SBgsJ1uw6/pN8DxlGkXpGQZETJCfIQQKk5tf8BrYZ7ypC1f3hiCgYDJf/nCEUk0U3H2ieuDf4EdKOTcWWY2supoRJXG92lgpJgEj1q+DA2G+4bta5ltA0S5A0LCBrWiIX+hZqOrZR17SLtk3L1R0TrCZKCxueCGHohaTvG9nQh1zoX9TM/VE3DCTaLoK5ZcdK5AjWPFlCLtoPDJwsVdQu3bB+T94ltjgtD9hn4jKIY9/o5fNLSomnmFFevYGIQsVZggt0GsVxhjlnITli+CL50DRV1ZsMJ0ug6xAjFkFcyPaAAo5MSnntRbfw+T3iuYhZuIHQEj4jrBR0j/oMvQ7kpSbtRLiVV0pXngEhFKSwTAItkIvEJJNBefWgEHEIgz8glRsyhVaqq8ZYXpe83w5ow1vkSJGjqN/lrDQMWoWsn3b8CwAAAA==') format('woff2'),
+  url('iconfont.woff?t=1560000223958') format('woff'),
+  url('iconfont.ttf?t=1560000223958') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560000223958#iconfont') format('svg'); /* iOS 4.1- */
+}
 
 .iconfont {
   font-family: "iconfont" !important;
@@ -37,4 +45,15 @@
   content: "\e878";
   font-weight: 700;
   color: #eb5e7c;
+}
+
+.icon-bianji:before {
+  content: "\e872";
+  font-size: 18px;
+  
+}
+
+.icon-shanchu:before {
+  content: "\e879";
+  font-size: 18px;
 }
