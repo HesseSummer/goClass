@@ -99,7 +99,10 @@
                  style='height: {{tbodyHeight-35}}px'>
       <view wx:for="{{myinvs}}" class="icon-inv">
         <view class='icons'>
-          <view class="icon1" bindtap='deleteinv' data-id='{{item.invitation_id}}' data-index='{{index}}'><text class='iconfont icon-shanchu'></text></view>
+          <view class="icon1" bindtap='deleteinv' data-id='{{item.invitation_id}}' data-index='{{index}}'>
+            <text class='iconfont icon-shanchu'></text>
+          </view>
+
           <view class='icon2' bindtap='editinv' 
           data-id='{{item.invitation_id}}' data-index='{{index}}'
           data-uname='{{item.user_name}}' data-sex='{{item.sex}}'

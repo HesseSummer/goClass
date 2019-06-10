@@ -8,7 +8,8 @@ Page({
     invitations: [],
     myinvs: [],
     reshow: 1,
-    empty: 1
+    empty: 1,
+    
   },
   // 提交关键词搜索
   formSubmit: function (e) {
@@ -152,21 +153,51 @@ Page({
       }
     })
   },
-  // 后端有问题？响应头不对啊
   deleteinv: function(e) {
+    let that = this;
+    console.log('点击了删除')
+    wx.showModal({
+      title: '删除邀约',
+      content: '确定删除该邀约？',
+      showCancel: true,
+      cancelColor: '#00c777',
+      confirmColor: 'gray',
+      success: function(res) {
+        if(res.cancel){
+
+        }else {
+          that._deleteinv(e.currentTarget.dataset.invitation_id,
+                          e.currentTarget.dataset.index)
+        }
+      },
+    })
+  },
+  _error(){
+    let that = this;
+    console.log('点击了取消')
+   
+  },
+  _success(){
+    let that = this;
+    console.log('点击了确定')
+    // 这里的函数还没完善
+    that._deleteinv();
+    
+  },
+  _deleteinv: function (invitation_id, index) {
     let that = this;
     wx.request({
       url: 'http://www.triple2.xyz:8081/invitation/delete',
       data: {
-        invitation_id: e.currentTarget.dataset.id
+        invitation_id: invitation_id
       },
       success: function(res){
-        console.log("删除inviID为" + e.currentTarget.dataset.id + "index为" + e.currentTarget.dataset.index + "的元素")
+        console.log("删除inviID为" + invitation_id + "index为" + index + "的元素")
         let c_myinvs = that.data.myinvs;
         console.log("原来")
         console.log(c_myinvs)
-        // 不知道为什么没有效果
-        c_myinvs.splice(e.currentTarget.dataset.index, 1);
+        
+        c_myinvs.splice(index, 1);
         console.log("splice后")
         console.log(c_myinvs)
         that.setData({
@@ -174,7 +205,11 @@ Page({
         })
         console.log("setData后")
         console.log(that.data.myinvs)
-        console.log("删除成功")
+        wx.showToast({
+          title: '删除成功',
+          duration: 2000,
+          icon: 'success'
+        })
 
       }
     })
@@ -184,11 +219,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    
-      that.showall();
-    
-    
-      that.getmyinvs();
     
     // 获取系统信息
     wx.getSystemInfo({
@@ -220,6 +250,8 @@ Page({
    */
   onShow: function () {
     console.log(this.data.reshow)
+    this.showall();
+    this.getmyinvs();
   },
 
   /**
