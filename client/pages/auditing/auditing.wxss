@@ -1,1 +1,142 @@
 /* pages/auditing/auditing.wxss */
+.topbar {
+  height: 35px;
+}
+.tabtitle {
+  display: inline-block;
+  margin: 8rpx 61rpx;
+  font-size: 15px;
+}
+.select-t {
+  color: #00b26a;
+  text-decoration: underline;
+  font-weight: 700;
+}
+/*广场*/
+
+.wrapper_s {
+  font-size: 14px;
+  margin-bottom: 15px;
+  height: 40px;
+  width: 100%;
+  
+}
+.form {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10rpx;
+}
+.wrapper_input {
+  width: 60%;
+  background-color: #f6f4f4;
+  margin: 0 12px 4px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  height: 31px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+}
+.icon_s {
+  display: inline-block;
+  float: left;
+  height: 31px;
+  line-height: 31px;
+  width: 5%;
+  margin: 0 4px 0 10px;
+}
+.input_search {
+  float: right;
+  display: inline-block;
+  height: 100%;
+  width: 80%;
+  overflow: hidden; 
+  text-overflow:ellipsis; 
+  white-space: nowrap; 
+}
+.btn_search {
+  display: inline-block;
+  height: 31px;
+  line-height: 31px;
+  font-size: 14px;
+  margin-left: 3px;
+  border-radius: 14px;
+  background: #333333;
+  color: white;
+  position: relative;
+  top: -4px;
+  width: 25%;
+}
+.wrapper-inv {
+  width: 100%;
+  margin-bottom: 50rpx;
+}
+.res {
+  /*box-sizing: border-box;*/
+  height: 300rpx;
+  width: 80%;
+  padding: 18rpx 22rpx;
+  color: white;
+  box-shadow: 0 6px 10px #b5b4b4;
+  border-radius: 10rpx;
+  font-size: 14px;
+  background-color: #333333;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+
+}
+.line1 {
+  /*height: 54rpx;/*18%*/
+  text-align: center;
+  flex: 1;
+}
+.line2 {
+  margin-top: 4px;
+  height: 50rpx; 
+  line-height:50rpx;
+  font-size: 16px;
+  text-align: center;
+  position:relative;
+  top:-45rpx;
+}
+.line3 {
+  max-height: 193rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 3rpx;
+  font-size:27rpx;
+  flex: 1;
+}
+.l3-left {
+  flex: 1;
+}
+.l3-right {
+  min-width: 125rpx;
+  text-align: right;
+}
+
+.tname, .major {
+  color: white;
+  background-color: #eb5528;
+  height: 25px;
+  line-height: 25px;
+  padding: 1px 5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.tname {
+  margin-left: 4px;
+}
+.cname {
+  padding:0 12rpx;
+  border-bottom:2px solid #00b26a;
+  color: #00b26a;
+  font-weight: 700;
+
+}
+.noresult {
+  height: 100%;
+  font-size: 14px;
+}

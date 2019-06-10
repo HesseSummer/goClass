@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/auditing/auditing",
     "pages/invitations/invitations",
     "pages/freeroom/freeroom",
     
-    "pages/auditing/auditing",
+    
     "pages/myInvitation/myInvitation"
     
   ],
