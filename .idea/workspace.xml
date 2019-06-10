@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd3cd46b-6449-4238-9924-a2f8a3942aec" name="Default Changelist" comment="查空教室页面，待重构、添加背景">
-      <change afterPath="$PROJECT_DIR$/client/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/images/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/client/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/freeroom/freeroom.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/freeroom/freeroom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/freeroom/freeroom.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/freeroom/freeroom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/freeroom/freeroom.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/freeroom/freeroom.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/freeroom/freeroom.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/freeroom/freeroom.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/invitations/invitations.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/invitations/invitations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/invitations/invitations.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/invitations/invitations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/invitations/invitations.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/invitations/invitations.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pages/invitations/invitations.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/client/pages/invitations/invitations.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/HelloController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,19 +19,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
+        <entry file="file://$PROJECT_DIR$/server/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -52,7 +31,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -72,9 +51,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="909" />
-    <option name="width" value="939" />
-    <option name="height" value="1091" />
+    <option name="x" value="908" />
+    <option name="width" value="940" />
+    <option name="height" value="1092" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -82,6 +61,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -92,36 +72,24 @@
             <path>
               <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
               <item name="goClass" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="goClass" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="goClass" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="freeroom" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -147,18 +115,24 @@
       <updated>1559568216641</updated>
       <workItem from="1559568217743" duration="187000" />
       <workItem from="1559621901195" duration="1264000" />
+      <workItem from="1560159503943" duration="379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1451000" />
+    <option name="totallyTimeSpent" value="1830000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1681" height="993" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969624" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -170,6 +144,12 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32896304" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -179,21 +159,20 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/client" />
+    </ignored-roots>
     <MESSAGE value="查空教室页面，待重构、添加背景" />
     <option name="LAST_COMMIT_MESSAGE" value="查空教室页面，待重构、添加背景" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="160" column="7" selection-start-line="160" selection-start-column="7" selection-end-line="160" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+    <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.js" />
+    <entry file="file://$PROJECT_DIR$/client/pages/freeroom/freeroom.wxml" />
+    <entry file="file://$PROJECT_DIR$/server/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
