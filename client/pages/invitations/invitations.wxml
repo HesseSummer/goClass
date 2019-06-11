@@ -1,7 +1,5 @@
 <view class='flex-mid topbar'>
-  <text wx:for="{{toptab}}" class="tabName tabtitle {{currentTab==index ? 'select-t' : ''}}"
-        bindtap="changetab" data-id="{{index}}"
-  >{{item}}</text>
+  <text wx:for="{{toptab}}" class="tabName tabtitle {{currentTab==index ? 'select-t' : ''}}" bindtap="changetab" data-id="{{index}}">{{item}}</text>
 </view>
 
 <swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{tbodyHeight-35}}px">
@@ -9,7 +7,7 @@
   <!--广场-->
   <swiper-item>
 
-    
+
     <view class='wrapper_s'>
       <!--搜索-->
       <form bindsubmit='formSubmit' class='form flex-mid'>
@@ -27,7 +25,17 @@
       <view class='resultshow'>
         <!--显示全部-->
         <block wx:if="{{reshow == 1}}">
-          <block wx:for="{{invitations}}" wx:key="inv">
+          <view wx:for="{{invitations}}" wx:key="inv"
+                 data-id='{{item.invitation_id}}' 
+                 data-index='{{index}}' 
+                 data-uname='{{item.user_name}}' 
+                 data-sex='{{item.sex}}' 
+                 data-osex='{{item.opposite_sex}}' 
+                 data-major='{{item.major}}' 
+                 data-illu='{{item.illustration}}' 
+                 data-keywords='{{item.key_words}}' 
+                 data-contact='{{item.contact_information}}'
+                 bindtap='lookInv'>
             <view class='wrapper-inv flex-mid'>
               <view class='inv'>
                 <view class='line1'>
@@ -48,12 +56,22 @@
               </view>
 
             </view>
-          </block>
+          </view>
         </block>
 
         <!--显示搜索结果-->
         <block wx:elif="{{reshow == 2}}">
-          <block wx:for="{{invitations}}" wx:key="inv">
+          <view wx:for="{{invitations}}" wx:key="inv"
+                 data-id='{{item.invitation_id}}' 
+                 data-index='{{index}}' 
+                 data-uname='{{item.user_name}}' 
+                 data-sex='{{item.sex}}' 
+                 data-osex='{{item.opposite_sex}}' 
+                 data-major='{{item.major}}' 
+                 data-illu='{{item.illustration}}' 
+                 data-keywords='{{item.key_words}}' 
+                 data-contact='{{item.contact_information}}'
+                 bindtap='lookInv'>
             <view class='wrapper-inv flex-mid'>
               <view class='inv'>
                 <view class='line1'>
@@ -74,7 +92,7 @@
               </view>
 
             </view>
-          </block>
+          </view>
         </block>
 
         <!--没有结果-->
@@ -94,29 +112,35 @@
 
   <!--我的-->
   <swiper-item class="flex-mid">
-    <scroll-view scroll-y scroll-with-animation 
-                 class='wrapper-my {{empty === 1? "empty": ""}}'
-                 style='height: {{tbodyHeight-35}}px'>
+    <scroll-view scroll-y scroll-with-animation class='wrapper-my {{empty === 1? "empty": ""}}' style='height: {{tbodyHeight-35}}px'>
       <view wx:for="{{myinvs}}" class="icon-inv">
         <view class='icons'>
           <view class="icon1" bindtap='deleteinv' data-id='{{item.invitation_id}}' data-index='{{index}}'>
             <text class='iconfont icon-shanchu'></text>
           </view>
 
-          <view class='icon2' bindtap='editinv' 
-          data-id='{{item.invitation_id}}' data-index='{{index}}'
-          data-uname='{{item.user_name}}' data-sex='{{item.sex}}'
-          data-major='{{item.major}}' data-illu='{{item.illustration}}'
-          data-keywords='{{item.key_words}}' data-contact='{{item.contact_information}}'
-          ><text class='iconfont icon-bianji'></text></view>
+          <view class='icon2' bindtap='editinv' data-id='{{item.invitation_id}}' data-index='{{index}}' data-uname='{{item.user_name}}' data-sex='{{item.sex}}' data-osex='{{item.opposite_sex}}' data-major='{{item.major}}' data-illu='{{item.illustration}}' data-keywords='{{item.key_words}}' data-contact='{{item.contact_information}}'>
+            <text class='iconfont icon-bianji'></text>
+          </view>
         </view>
-        <view class='my-wrapper-inv'>
+        <view class='my-wrapper-inv'
+              data-id='{{item.invitation_id}}' 
+              data-index='{{index}}' 
+              data-uname='{{item.user_name}}' 
+              data-sex='{{item.sex}}' 
+              data-osex='{{item.opposite_sex}}' 
+              data-major='{{item.major}}' 
+              data-illu='{{item.illustration}}' 
+              data-keywords='{{item.key_words}}' 
+              data-contact='{{item.contact_information}}'
+              bindtap='lookInv'>
+
           <view class='my-inv'>
             <view class='line1'>
               <text class='wrappertags'>
                 <text class="usex iconfont {{item.sex == '男'? 'icon-nan': 'icon-nv'}}"></text>
-                <text class='uname'>{{item.user_name}} </text>
-                <text class='umajor'>{{item.major}}</text>
+              <text class='uname'>{{item.user_name}} </text>
+              <text class='umajor'>{{item.major}}</text>
               </text>
 
             </view>
@@ -135,3 +159,218 @@
     </scroll-view>
   </swiper-item>
 </swiper>
+<button bindtap='myadd'>
+  <image src='../../images/add.png' class='bt-add'></image>
+</button>
+<!--发布邀约-->
+<modal hidden="{{addHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='add_yes' bindcancel='add_no' class='invmodal'>
+  <view class='wrapper-modal'>
+
+    <view class='newillu'>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>关键词：</text>
+      <view class='newcontent flex-row'>
+        <view class='w-input'>
+          <input bindinput='get_key1' value="{{key1}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key2' value="{{key2}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key3' value="{{key3}}"></input>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>姓名：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_user_name' value="{{user_name}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>专业：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_major' value="{{major}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>联系方式：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_contact' value="{{contact_information}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>本人性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
+            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>期望性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
+            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</modal>
+<!--修改邀约-->
+<modal hidden="{{editHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='rerelease' bindcancel='add_no' class='invmodal'>
+  <view class='wrapper-modal'>
+
+    <view class='newillu'>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>关键词：</text>
+      <view class='newcontent flex-row'>
+        <view class='w-input'>
+          <input bindinput='get_key1' value="{{key1}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key2' value="{{key2}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key3' value="{{key3}}"></input>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>姓名：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_user_name' value="{{user_name}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>专业：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_major' value="{{major}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>联系方式：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_contact' value="{{contact_information}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>本人性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
+            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>期望性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
+            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</modal>
+
+
+<!--查看邀约-->
+<modal hidden="{{lookHidden}}" title='自习邀约' no-cancel='true' confirm-text='关闭' bindconfirm='closeInv' class='invmodal'>
+  <view class='wrapper-modal'>
+
+    <view class='newillu'>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>关键词：</text>
+      <view class='newcontent flex-row'>
+        <view class='w-input'>
+          <input bindinput='get_key1' value="{{key1}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key2' value="{{key2}}"></input>
+        </view>
+        <view class='w-input'>
+          <input bindinput='get_key3' value="{{key3}}"></input>
+        </view>
+      </view>
+
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>姓名：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_user_name' value="{{user_name}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>专业：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_major' value="{{major}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>联系方式：</text>
+      <view class='newcontent w-input'>
+        <input bindinput='get_contact' value="{{contact_information}}"></input>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>本人性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
+            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+    <view class='newwrapper flex-row'>
+      <text class='newtitle'>期望性别：</text>
+      <view class='newcontent'>
+        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
+          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
+            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
+          </label>{{item.label}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</modal>

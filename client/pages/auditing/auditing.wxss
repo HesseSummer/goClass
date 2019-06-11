@@ -25,9 +25,10 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 10rpx;
+  display: flex;
 }
 .wrapper_input {
-  width: 60%;
+  flex: 1;
   background-color: #f6f4f4;
   margin: 0 12px 4px 0;
   display: inline-block;
@@ -64,7 +65,6 @@
   color: white;
   position: relative;
   top: -4px;
-  width: 25%;
 }
 .wrapper-inv {
   width: 100%;

@@ -92,6 +92,7 @@
   margin-left: 2px;
   border: 1px solid transparent;
   background-color: #e7e4e4;
+  color: transparent;
 
 }
 /*.c-common>.c-common+.c-common
@@ -101,4 +102,7 @@
 
 .free0 {
   background-color: #00c777;
+  text-align: center;
+  line-height: 28px;
+  color: white;
 }

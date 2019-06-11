@@ -49,7 +49,7 @@
       <view class='flex body-courseli'>
         <view wx:for="{{courseli}}" wx:for-item="first" class="line">
           <view class='flex-row'>
-            <view wx:for="{{first}}" wx:for-item="second" class='c-common free{{second}}'></view>
+            <view wx:for="{{first}}" wx:for-item="second" class='c-common free{{second}}'>free</view>
           </view>
         </view>
       </view>

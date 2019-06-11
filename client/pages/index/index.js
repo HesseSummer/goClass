@@ -35,6 +35,9 @@ Page({
     })
   },
   bindGetUserInfo: function(e) {
+    wx.showLoading({
+      title: '加载中...',
+    })
     if (e.detail.userInfo) {
       let that = this;
       /*user_name*/
@@ -57,11 +60,13 @@ Page({
             success: res => {
               console.log("success")
               if(res.statusCode == 200){
-                console.log("用户的user_id: " + res.data.user_id);
-                app.globalData.user_id = res.data.user_id;//格式
+                console.log("用户的user_id: ");
+                app.globalData.user_id = res.data;//格式
+                console.log(app.globalData.user_id)
                 wx.switchTab({
                   url: '/pages/freeroom/freeroom',
                 })
+                wx.hideLoading();
               }
               
             }

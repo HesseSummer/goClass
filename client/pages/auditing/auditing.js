@@ -142,13 +142,19 @@ Page({
   // 点击改变标签页
   changetab: function (e) {
     this.setData({
-      currentTab: e.currentTarget.dataset.id
+      currentTab: e.currentTarget.dataset.id,
+      s1_inputs: '',
+      s2_inputs: '',
+      s3_inputs: ''
     })
   },
   // 滑动改变标签页
   switchTab: function (e) {
     this.setData({
-      currentTab: e.detail.current
+      currentTab: e.detail.current,
+      s1_inputs: '',
+      s2_inputs: '',
+      s3_inputs: ''
     });
   },
   
@@ -207,7 +213,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      s1_inputs: ''
+    })
   },
 
   /**

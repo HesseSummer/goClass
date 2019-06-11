@@ -213,3 +213,75 @@
   font-size: 14px;
   background-color: #333333;
 }
+/*加号*/
+.bt-add {
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 10rpx;
+  right: 10rpx;
+}
+/*.invmodal {
+  background: lightblue;
+}*/
+/*发布邀约*/
+.wrapper-modal {
+  font-size: 14px;
+}
+.newillu {
+  height: 300rpx;
+  font-size: 14px;
+  border: 1px solid #888888;
+  border-radius: 2px;
+}
+.place-holder {
+  margin: 5px;
+}
+.w-input {
+  border-bottom: 1px solid #888888;
+  margin-left: 8px;
+}
+
+.newwrapper {
+  align-items: flex-end;
+  margin-top: 10px;
+}
+.newtitle {
+  width: 70px;
+}
+.newcontent {
+  flex: 1;
+}
+
+
+.radio-box{
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.sex_check {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #D7D7D9;
+  margin-right: 4px;
+}
+
+.checked {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -1px;
+}
+/* 查看邀约*/
+.look {
+  background-color: white;
+  padding: 50rpx;
+}
+.close {
+  text-align: center;
+  background-color: #00b26a;
+}

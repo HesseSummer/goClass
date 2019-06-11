@@ -13,7 +13,7 @@
       <form bindsubmit='course_formSubmit' class='form flex-mid'>
         <view class='wrapper_input'>
           <view class="iconfont icon-sousuo-tianchong icon_s"></view>
-          <input type='text' name="keyword" class='input_search' placeholder='输入课程名搜索' />
+          <input type='text' name="keyword" class='input_search' placeholder='输入课程名搜索' value='{{s1_inputs}}' />
         </view>
         <button form-type='submit' class='btn_search'>搜索</button>
       </form>
@@ -73,7 +73,7 @@
       <form bindsubmit='major_formSubmit' class='form flex-mid'>
         <view class='wrapper_input'>
           <view class="iconfont icon-sousuo-tianchong icon_s"></view>
-          <input type='text' name="keyword" class='input_search' placeholder='输入专业名搜索' />
+          <input type='text' name="keyword" class='input_search' placeholder='输入专业名搜索' value='{{s2_inputs}}'/>
         </view>
         <button form-type='submit' class='btn_search'>搜索</button>
       </form>
@@ -134,7 +134,7 @@
       <form bindsubmit='teacher_formSubmit' class='form flex-mid'>
         <view class='wrapper_input'>
           <view class="iconfont icon-sousuo-tianchong icon_s"></view>
-          <input type='text' name="keyword" class='input_search' placeholder='输入老师名搜索' />
+          <input type='text' name="keyword" class='input_search' placeholder='输入老师名搜索' value='{{s3_inputs}}'/>
         </view>
         <button form-type='submit' class='btn_search'>搜索</button>
       </form>
