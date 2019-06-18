@@ -2,7 +2,7 @@
   <text wx:for="{{toptab}}" class="tabName tabtitle {{currentTab==index ? 'select-t' : ''}}" bindtap="changetab" data-id="{{index}}">{{item}}</text>
 </view>
 
-<swiper current="{{currentTab}}" duration="300" bindchange="switchTab" style="height:{{tbodyHeight-35}}px">
+<swiper current="{{currentTab}}" duration="200" bindanimationfinish="switchTab" style="height:{{tbodyHeight-35}}px">
   <!--topbar高35px-->
   <!--广场-->
   <swiper-item>
@@ -13,7 +13,7 @@
       <form bindsubmit='formSubmit' class='form flex-mid'>
         <view class='wrapper_input'>
           <view class="iconfont icon-sousuo-tianchong icon_s"></view>
-          <input type='text' name="keyword" class='input_search' placeholder='输入关键词搜索' />
+          <input bindblur='inputSubmit' type='text' name="keyword" class='input_search' placeholder='输入关键词搜索' />
         </view>
         <button form-type='submit' class='btn_search'>搜索</button>
         <button class='btn_search' bindtap="showall">全部</button>
@@ -167,20 +167,20 @@
   <view class='wrapper-modal'>
 
     <view class='newillu'>
-      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{addInv.illustration}}" maxlength="300"></textarea>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindblur='get_words' value="{{addInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
         <view class='w-input'>
-          <input bindinput='get_key1' value="{{addInv.key1}}"></input>
+          <input bindblur='get_key1' value="{{addInv.key1}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key2' value="{{addInv.key2}}"></input>
+          <input bindblur='get_key2' value="{{addInv.key2}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key3' value="{{addInv.key3}}"></input>
+          <input bindblur='get_key3' value="{{addInv.key3}}"></input>
         </view>
       </view>
 
@@ -189,21 +189,21 @@
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_user_name' value="{{addInv.user_name}}"></input>
+        <input bindblur='get_user_name' value="{{addInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_major' value="{{addInv.major}}"></input>
+        <input bindblur='get_major' value="{{addInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_contact' value="{{addInv.contact_information}}"></input>
+        <input bindblur='get_contact' value="{{addInv.contact_information}}"></input>
       </view>
     </view>
 
@@ -243,20 +243,20 @@
   <view class='wrapper-modal'>
 
     <view class='newillu'>
-      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='_get_words' value="{{upInv.illustration}}" maxlength="300"></textarea>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindblur='_get_words' value="{{upInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
         <view class='w-input'>
-          <input bindinput='_get_key1' value="{{upInv.key1}}"></input>
+          <input bindblur='_get_key1' value="{{upInv.key1}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='_get_key2' value="{{upInv.key2}}"></input>
+          <input bindblur='_get_key2' value="{{upInv.key2}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='_get_key3' value="{{upInv.key3}}"></input>
+          <input bindblur='_get_key3' value="{{upInv.key3}}"></input>
         </view>
       </view>
 
@@ -265,21 +265,21 @@
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
       <view class='newcontent w-input'>
-        <input bindinput='_get_user_name' value="{{upInv.user_name}}"></input>
+        <input bindblur='_get_user_name' value="{{upInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
       <view class='newcontent w-input'>
-        <input bindinput='_get_major' value="{{upInv.major}}"></input>
+        <input bindblur='_get_major' value="{{upInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
       <view class='newcontent w-input'>
-        <input bindinput='_get_contact' value="{{upInv.contact_information}}"></input>
+        <input bindblur='_get_contact' value="{{upInv.contact_information}}"></input>
       </view>
     </view>
 

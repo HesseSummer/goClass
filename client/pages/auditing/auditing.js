@@ -6,7 +6,7 @@ Page({
     toptab: ['搜课程', '搜专业', '搜老师'],
     currentTab: 0,
     results: [],
-    reshow: 1,
+    reshow: 3,
     empty: 1,
 
   },

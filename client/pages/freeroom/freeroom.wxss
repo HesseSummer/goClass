@@ -110,7 +110,7 @@
 
 /*签名模块*/
 .sign-container{
-  margin-top: 8px;
+  margin-top: 40rpx;
   margin-bottom: 8px;
   justify-content: center;  
   width: 100%;

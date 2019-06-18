@@ -7,65 +7,70 @@ Page({
     motto: '',
     note: ''
   },
-  
-  sign_yes:function(event){
+
+  sign_yes: function(event) {
     this.setData({
-      motto:event.detail.value
+      motto: event.detail.value
     })
-    console.log("你的签名完成了")
-    wx.request({
-      url: 'http://www.triple2.xyz:8081/user/setmotto',
-      data: {
-        motto: this.data.motto,
-        //user_id: app.globalData.user_id,
-        user_id: 1
-      },
-      success: () => {
-        wx.showToast({
-          title: '签名修改成功',
-          icon: 'success'
-        });
-      }
-    });
+    console.log('签名是：')
+    console.log(this.data.motto)
+    if (this.data.motto !== '') {
+      console.log("你的签名完成了")
+      wx.request({
+        url: 'http://www.triple2.xyz:8081/user/setmotto',
+        data: {
+          motto: this.data.motto,
+          user_id: app.globalData.user_id
+        },
+        success: () => {
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success'
+          });
+        }
+      })
+    }
   },
 
-  note_yes:function(event){
+  note_yes: function(event) {
     this.setData({
-      note:event.detail.value
+      note: event.detail.value
     })
-    console.log("你的便签完成了")
-    wx.request({
-      url: 'http://www.triple2.xyz:8081/user/setnote',
-      data: {
-        note: this.data.note,
-        //user_id: app.globalData.user_id,
-        user_id: 1
-      },
-      success: () => {
-        wx.showToast({
-          title: '便签保存成功',
-          icon: 'success'
-        });
-      }
-    })
+    console.log('便签是：')
+    console.log(this.data.note)
+    if(this.data.note !== ''){
+      console.log("你的便签完成了")
+      wx.request({
+        url: 'http://www.triple2.xyz:8081/user/setnote',
+        data: {
+          note: this.data.note,
+          user_id: app.globalData.user_id
+        },
+        success: () => {
+          wx.showToast({
+            title: '保存成功',
+            icon: 'success'
+          });
+        }
+      })
+    }
   },
 
-  getweek_detail: function () {
-    
+  getweek_detail: function() {
+
     let str0 = new Date(2019, 1, 18); //第一周第一天为2.18
     let str = new Date(this.data.date); //待计算的时间
     let distance = Math.round((str.valueOf() - str0.valueOf()) / 86400000);
     let w = Math.ceil(distance / 7);
     w === 0 ? w = 1 : null;
     return w;
-  }
-  ,
-  
-  getweekday: function () {
+  },
+
+  getweekday: function() {
     let d = new Date(this.data.date).getDay();
     return d;
   },
-  changeB1: function (event) {
+  changeB1: function(event) {
     let that = this;
     let msg = event.currentTarget.dataset.msg;
     let id = event.currentTarget.dataset.id;
@@ -77,29 +82,27 @@ Page({
     })
     console.log(that.data.msglist);
     // 如果教学楼是二教，禁止ABC
-    if(id == 0) {
+    if (id == 0) {
       that.setData({
         B2selectable: false,
       })
-    }
-    else {
+    } else {
       that.setData({
         B2selectable: true,
       })
     }
     // 如果教学楼是四教或二教，禁止F5
-    if(id == 2 || id == 0){
+    if (id == 2 || id == 0) {
       that.setData({
         f5selectable: false
       })
-    }
-    else {
+    } else {
       that.setData({
         f5selectable: true
       })
     }
   },
-  changeB2: function (event) {
+  changeB2: function(event) {
     let that = this;
     let msg = event.currentTarget.dataset.msg;
     let id = event.currentTarget.dataset.id;
@@ -111,7 +114,7 @@ Page({
       id2: id
     })
   },
-  changeB3: function (event) {
+  changeB3: function(event) {
     let that = this;
     let msg = event.currentTarget.dataset.msg;
     let id = event.currentTarget.dataset.id;
@@ -124,18 +127,17 @@ Page({
   },
 
   access: function() {
-    
+
     let that = this;
     let a = that.data.msglist[0];
     console.log(a)
     let b = that.data.msglist[1];
     let c = that.data.msglist[2];
     let qstr = '';
-    if(a == "二教"){
+    if (a == "二教") {
       console.log("here");
       qstr = a + c[1];
-    }
-    else {
+    } else {
       qstr = a + b[0] + c[1];
       console.log("there");
     }
@@ -158,7 +160,7 @@ Page({
         wx.hideLoading()
         console.log(res.data);
         let newroomli = [];
-        for(let i=0; i<res.data.length; ++i){
+        for (let i = 0; i < res.data.length; ++i) {
           newroomli.push(i + c[1] * 100 + 1);
         }
         that.setData({
@@ -166,18 +168,18 @@ Page({
           roomli: newroomli
         })
       }
-    });    
+    });
   },
   bindDateChange: function(event) {
     this.setData({
-     date: event.detail.value
+      date: event.detail.value
     })
     this.access();
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function() {
     var date = util.formatDate(new Date());
     this.setData({
       date: date,
@@ -191,8 +193,8 @@ Page({
       b2list: ['A座', 'B座', 'C座'],
       b3list: ['F1', 'F2', 'F3', 'F4', 'F5'],
       msglist: ['四教', 'B座', 'F3'],
-      courseli:
-        [[1, 0, 0, 0, 0],
+      courseli: [
+        [1, 0, 0, 0, 0],
         [0, 0, 1, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 1, 0, 0, 0],
@@ -204,17 +206,18 @@ Page({
         [1, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [1, 0, 0, 0, 0],
-        [0, 1, 0, 0, 0]]
+        [0, 1, 0, 0, 0]
+      ]
     });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     //调用函数时，传入new Date()参数，返回值是日期和时间
-     var time = util.formatTime(new Date());
-     // 再通过setData更改Page()里面的data，动态更新页面的数据
-     this.setData({
+    var time = util.formatTime(new Date());
+    // 再通过setData更改Page()里面的data，动态更新页面的数据
+    this.setData({
       time: time
     });
   },
@@ -222,44 +225,44 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  changeContext: function (e) {
+  changeContext: function(e) {
     console.log(e.detail.value);
     var that = this;
     that.setData({

@@ -57,6 +57,41 @@ Page({
     }
 
   },
+  inputSubmit(e){
+    let that = this;
+    let formData = e.detail.value;
+    if (formData == '') {
+      wx.showToast({
+        title: '输入不能为空',
+        icon: 'none'
+      })
+    } else {
+      wx.showLoading({
+        title: '搜索中...',
+        icon: 'Loading'
+      });
+
+      wx.request({
+        url: 'http://www.triple2.xyz:8081/invitation/searchall',
+        data: {
+          key: formData
+        },
+        success: function (res) {
+          if (res.data.length == 0) {
+            that.setData({
+              reshow: 3
+            })
+          } else {
+            that.getKeywords(res.data, "invitations");
+            that.setData({
+              reshow: 2
+            })
+          }
+          wx.hideLoading();
+        }
+      })
+    }
+  },
   // 提交关键词搜索
   formSubmit: function(e) {
     var that = this;
@@ -99,22 +134,24 @@ Page({
       currentTab: e.currentTarget.dataset.id
     })
     // 强制刷新
-    if (e.currentTarget.dataset.id === "0") {
+    /*if (e.currentTarget.dataset.id === "0") {
       this.showall()
       console.log('广场页面强制刷新：')
       console.log('广场的所有邀约是：')
       console.log(this.data.invitations)
-    }
+    }*/
   },
   // 滑动改变标签页
   switchTab: function(e) {
-    this.setData({
-      currentTab: e.detail.current
-    });
+
+      this.setData({
+        currentTab: e.detail.current
+      })
+    
     // 强制刷新
-    if (e.detail.current === 0) {
+    /*if (e.detail.current === 0) {
       this.showall()
-    }
+    }*/
   },
   // 点击“全部”
   showall: function() {
@@ -324,6 +361,7 @@ Page({
         success: (res) => {
           console.log("更新--更新成功后我的所有邀约是")
           this.getmyinvs();
+          this.showall();
           wx.showToast({
             title: '修改成功',
             icon: 'success'
@@ -337,7 +375,6 @@ Page({
   },
   // 添加邀约
   myadd: function() {
-
     this.setData({
       addHidden: false
     });
@@ -524,7 +561,9 @@ Page({
       let opposite_sex = this.data.addInv.opposite_sex
       opposite_sex = (opposite_sex == 0) ? '男' : '女'
 
-
+      wx.showLoading({
+        title: '发布中...',
+      })
       wx.request({
         url: 'http://www.triple2.xyz:8081/invitation/setinvitation',
         data: {
@@ -538,18 +577,19 @@ Page({
           contact_information: this.data.addInv.contact_information
         },
         success: () => {
-          wx.showToast({
-            title: '发布成功',
-            icon: 'success'
-          });
           this.setData({
             addHidden: true
           });
           this.clearInputEvent();
           console.log('发布后：')
           this.showall();
-          
           this.getmyinvs();
+
+          wx.hideLoading();
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success'
+          });
           
         }
       })
@@ -569,6 +609,9 @@ Page({
   },
   onLoad: function(options) {
     var that = this;
+    this.setData({
+      ['addInv.user_name']: app.globalData.user_name
+    })
     // 检查登录与否
     that.checkLogin();
     wx.stopPullDownRefresh() //刷新完成后停止下拉刷新动效

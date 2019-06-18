@@ -49,7 +49,7 @@
       <view class='flex body-courseli'>
         <view wx:for="{{courseli}}" wx:for-item="first" class="line">
           <view class='flex-row'>
-            <view wx:for="{{first}}" wx:for-item="second" class='c-common free{{second}}'>free</view>
+            <view wx:for="{{first}}" wx:for-item="second" class='c-common free{{second}}'>没课</view>
           </view>
         </view>
       </view>
@@ -66,7 +66,7 @@
   <!--我的个性签名-->
   <view class='flex-row sign-container'>
     <view class='flex-row'>
-      <input class='my-sign' placeholder-style='sign-placeholder' placeholder='你的个性签名' value="{{motto}}" type='text' confirm-type='done' bindconfirm='sign_yes'></input>
+      <input class='my-sign' placeholder-style='sign-placeholder' placeholder='你的个性签名' value="{{motto}}" type='text' confirm-type='done' bindconfirm='sign_yes' bindblur='sign_yes'></input>
     </view>
     <view class='flex-row'>
       <image class='sign-image'src='../../images/sign.png'></image>
@@ -75,7 +75,7 @@
 
   <!--便签功能-->
   <view class='note-container'>
-    <textarea class='my-note' placeholder-style='note-placeholder' placeholder='便签：在这里可以记录你想要保存的信息' value="{{note}}" auto-height='true' show-confirm-bar='true' adjust-position='true' bindconfirm='note_yes'></textarea>
+    <textarea class='my-note' placeholder-style='note-placeholder' placeholder='便签：在这里可以记录你想要保存的信息' value="{{note}}" auto-height='true' show-confirm-bar='true' adjust-position='true' bindconfirm='note_yes' bindblur='note_yes'></textarea>
   </view>
   </view>
 </view>

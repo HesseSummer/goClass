@@ -55,12 +55,18 @@
         </block>
 
         <!--没有结果-->
-        <block wx:else>
+        <block wx:elif="{{reshow == 2}}">
           <view class='flex-mid noresult'>
-            <text class='t-black'>无匹配结果</text>
+            <text class='t-gray'>无匹配结果</text>
           </view>
         </block>
 
+        <!--没有搜索-->
+        <block wx:else>
+          <view class='flex-mid notSearch'>
+            <text class='t-gray'>请搜索你感兴趣的课程</text>
+          </view>
+        </block>
 
       </view>
     </scroll-view>
@@ -115,9 +121,16 @@
         </block>
 
         <!--没有结果-->
-        <block wx:else>
+        <block wx:elif="{{reshow == 2}}">
           <view class='flex-mid noresult'>
-            <text class='t-black'>无匹配结果</text>
+            <text class='t-gray'>无匹配结果</text>
+          </view>
+        </block>
+
+        <!--没有搜索-->
+        <block wx:else>
+          <view class='flex-mid notSearch'>
+            <text class='t-gray'>请搜索你感兴趣的专业</text>
           </view>
         </block>
 
@@ -176,9 +189,16 @@
         </block>
 
         <!--没有结果-->
-        <block wx:else>
+        <block wx:elif="{{reshow == 2}}">
           <view class='flex-mid noresult'>
-            <text class='t-black'>无匹配结果</text>
+            <text class='t-gray'>无匹配结果</text>
+          </view>
+        </block>
+
+        <!--没有搜索-->
+        <block wx:else>
+          <view class='flex-mid notSearch'>
+            <text class='t-gray'>请搜索你感兴趣的老师</text>
           </view>
         </block>
 
