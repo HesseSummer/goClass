@@ -4,9 +4,52 @@ var app = getApp()
 Page({
   data: {
     // 计算
-    
+    motto: '',
+    note: ''
   },
   
+  sign_yes:function(event){
+    this.setData({
+      motto:event.detail.value
+    })
+    console.log("你的签名完成了")
+    wx.request({
+      url: 'http://www.triple2.xyz:8081/user/setmotto',
+      data: {
+        motto: this.data.motto,
+        //user_id: app.globalData.user_id,
+        user_id: 1
+      },
+      success: () => {
+        wx.showToast({
+          title: '签名修改成功',
+          icon: 'success'
+        });
+      }
+    });
+  },
+
+  note_yes:function(event){
+    this.setData({
+      note:event.detail.value
+    })
+    console.log("你的便签完成了")
+    wx.request({
+      url: 'http://www.triple2.xyz:8081/user/setnote',
+      data: {
+        note: this.data.note,
+        //user_id: app.globalData.user_id,
+        user_id: 1
+      },
+      success: () => {
+        wx.showToast({
+          title: '便签保存成功',
+          icon: 'success'
+        });
+      }
+    })
+  },
+
   getweek_detail: function () {
     
     let str0 = new Date(2019, 1, 18); //第一周第一天为2.18
@@ -79,6 +122,7 @@ Page({
       id3: id
     })
   },
+
   access: function() {
     
     let that = this;
