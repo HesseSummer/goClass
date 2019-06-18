@@ -72,7 +72,7 @@
 }
 .res {
   /*box-sizing: border-box;*/
-  height: 300rpx;
+  /*height: 300rpx;*/
   width: 80%;
   padding: 18rpx 22rpx;
   color: white;
@@ -92,13 +92,13 @@
   flex: 1;
 }
 .line2 {
-  margin-top: 4px;
+  margin: 10rpx 0;
   height: 50rpx; 
   line-height:50rpx;
   font-size: 16px;
   text-align: center;
-  position:relative;
-  top:-45rpx;
+  /*position:relative;
+  top:-45rpx;*/
 }
 .line3 {
   max-height: 193rpx;

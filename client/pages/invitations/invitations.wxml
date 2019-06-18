@@ -35,7 +35,7 @@
                  data-illu='{{item.illustration}}' 
                  data-keywords='{{item.key_words}}' 
                  data-contact='{{item.contact_information}}'
-                 bindtap='lookInv'>
+                 bindtap='runlookInv'>
             <view class='wrapper-inv flex-mid'>
               <view class='inv'>
                 <view class='line1'>
@@ -167,20 +167,20 @@
   <view class='wrapper-modal'>
 
     <view class='newillu'>
-      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{addInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
         <view class='w-input'>
-          <input bindinput='get_key1' value="{{key1}}"></input>
+          <input bindinput='get_key1' value="{{addInv.key1}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key2' value="{{key2}}"></input>
+          <input bindinput='get_key2' value="{{addInv.key2}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key3' value="{{key3}}"></input>
+          <input bindinput='get_key3' value="{{addInv.key3}}"></input>
         </view>
       </view>
 
@@ -189,43 +189,49 @@
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_user_name' value="{{user_name}}"></input>
+        <input bindinput='get_user_name' value="{{addInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_major' value="{{major}}"></input>
+        <input bindinput='get_major' value="{{addInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_contact' value="{{contact_information}}"></input>
+        <input bindinput='get_contact' value="{{addInv.contact_information}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>本人性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
-            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='check_sex'>
+          <label class="radio">
+            <radio  value="0" checked="{{addInv.sex==0? true: false}}"/>男
+          </label>
+          <label class="radio">
+            <radio  value="1" checked="{{addInv.sex==1? true: false}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>期望性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
-            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='check_opposite_sex'>
+          <label class="radio">
+            <radio  value="0" checked="{{addInv.opposite_sex==0? true: false}}"/>男
+          </label>
+          <label class="radio">
+            <radio  value="1" checked="{{addInv.opposite_sex==1? true: false}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 
@@ -233,24 +239,24 @@
 
 </modal>
 <!--修改邀约-->
-<modal hidden="{{editHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='rerelease' bindcancel='add_no' class='invmodal'>
+<modal hidden="{{editHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='rerelease' bindcancel='edit_no' class='invmodal'>
   <view class='wrapper-modal'>
 
     <view class='newillu'>
-      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='_get_words' value="{{upInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
         <view class='w-input'>
-          <input bindinput='get_key1' value="{{key1}}"></input>
+          <input bindinput='_get_key1' value="{{upInv.key1}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key2' value="{{key2}}"></input>
+          <input bindinput='_get_key2' value="{{upInv.key2}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key3' value="{{key3}}"></input>
+          <input bindinput='_get_key3' value="{{upInv.key3}}"></input>
         </view>
       </view>
 
@@ -259,43 +265,49 @@
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_user_name' value="{{user_name}}"></input>
+        <input bindinput='_get_user_name' value="{{upInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_major' value="{{major}}"></input>
+        <input bindinput='_get_major' value="{{upInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_contact' value="{{contact_information}}"></input>
+        <input bindinput='_get_contact' value="{{upInv.contact_information}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>本人性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
-            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='_check_sex'>
+          <label class="radio">
+            <radio value="0" checked="{{upInv.sex==0 ? true: false}}"/>男
+          </label>
+          <label class="radio">
+            <radio value="1" checked="{{upInv.sex==1? true: false}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>期望性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
-            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='_check_opposite_sex'>
+          <label class="radio">
+            <radio  value="0" checked="{{upInv.opposite_sex==0? true: false}}"/>男
+          </label>
+          <label class="radio">
+            <radio  value="1" checked="{{upInv.opposite_sex==1? true: false}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 
@@ -305,24 +317,24 @@
 
 
 <!--查看邀约-->
-<modal hidden="{{lookHidden}}" title='自习邀约' no-cancel='true' confirm-text='关闭' bindconfirm='closeInv' class='invmodal'>
+<modal hidden="{{lookHidden}}" title='自习邀约' no-cancel='true' confirm-text='关闭' class='invmodal' bindconfirm='closeInv'>
   <view class='wrapper-modal'>
 
     <view class='newillu'>
-      <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindinput='get_words' value="{{illustration}}" maxlength="300"></textarea>
+      <textarea disabled placeholder-class="place-holder" placeholder='请输入邀约内容...' value="{{lookInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
         <view class='w-input'>
-          <input bindinput='get_key1' value="{{key1}}"></input>
+          <input disabled value="{{lookInv.key1}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key2' value="{{key2}}"></input>
+          <input disabled value="{{lookInv.key2}}"></input>
         </view>
         <view class='w-input'>
-          <input bindinput='get_key3' value="{{key3}}"></input>
+          <input disabled value="{{lookInv.key3}}"></input>
         </view>
       </view>
 
@@ -331,43 +343,49 @@
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_user_name' value="{{user_name}}"></input>
+        <input disabled value="{{lookInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_major' value="{{major}}"></input>
+        <input disabled value="{{lookInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
       <view class='newcontent w-input'>
-        <input bindinput='get_contact' value="{{contact_information}}"></input>
+        <input disabled value="{{lookInv.contact_information}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>本人性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_sex">
-            <image class='checked' wx:if='{{index==sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='check_sex'>
+          <label class="radio">
+            <radio disabled value="0" checked="{{!lookInv.sex}}"/>男
+          </label>
+          <label class="radio">
+            <radio disabled value="1" checked="{{lookInv.sex}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>期望性别：</text>
       <view class='newcontent'>
-        <view class="radio-box" wx:for="{{sex_check}}" key="item.id">
-          <label class="sex_check {{ index==opposite_sex ? 'on' : ''}}" data-index='{{index}}' data-value='{{item.value}}' bindtap="check_opposite_sex">
-            <image class='checked' wx:if='{{index==opposite_sex}}' src='../../images/check.png'></image>
-          </label>{{item.label}}
-        </view>
+        <radio-group class="radio-box" bindchange='check_opposite_sex'>
+          <label class="radio">
+            <radio disabled value="0" checked="{{!lookInv.opposite_sex}}"/>男
+          </label>
+          <label class="radio">
+            <radio disabled value="1" checked="{{lookInv.opposite_sex}}"/>女
+          </label>
+        </radio-group>
       </view>
     </view>
 

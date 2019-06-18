@@ -233,6 +233,9 @@
   font-size: 14px;
   border: 1px solid #888888;
   border-radius: 2px;
+} 
+.newillu textarea{
+  width: 100%;
 }
 .place-holder {
   margin: 5px;
@@ -256,8 +259,12 @@
 
 .radio-box{
   display: inline-block;
+  
   margin-right: 20px;
   margin-top: 10px;
+}
+.radio {
+  margin-left: 20px;
 }
 .sex_check {
   display: inline-block;

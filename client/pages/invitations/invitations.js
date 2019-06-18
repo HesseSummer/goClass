@@ -14,33 +14,53 @@ Page({
     editHidden: true,
     lookHidden: true,
 
-    user_name: '',
-    major: '',
-    contact_information: '',
-    key1: '',
-    key2: '',
-    key3: '',
-    illustration: '',
-    inputContent: '',
-    opposite_sex: 0,
-    sex: 0,
-    sex_check: [{
-        label: '男',
-        value: '男'
-      },
-      {
-        label: '女',
-        value: '女'
-      }
-    ]
+    lookInv: {
+      user_name: '',
+      major: '',
+      contact_information: '',
+      key1: '',
+      key2: '',
+      key3: '',
+      illustration: '',
+      inputContent: '',
+
+      sex: 0,
+      opposite_sex: 0,
+
+    },
+
+    addInv: {
+      user_name: '',
+      major: '',
+      contact_information: '',
+      key1: '',
+      key2: '',
+      key3: '',
+      illustration: '',
+      inputContent: '',
+
+      sex: 0,
+      opposite_sex: 0,
+    },
+
+    upInv: {
+      illustration: '',
+      key1: '',
+      key2: '',
+      key3: '',
+      user_name: '',
+      major: '',
+      contact_information: '',
+      sex: 0,
+      opposite_sex:0,
+      invitation_id: ''
+    }
 
   },
   // 提交关键词搜索
   formSubmit: function(e) {
     var that = this;
     var formData = e.detail.value.keyword; // 关键词
-    console.log(formData);
-
     if (formData == '') {
       wx.showToast({
         title: '输入不能为空',
@@ -58,25 +78,15 @@ Page({
           key: formData
         },
         success: function(res) {
-          console.log(res.data);
           if (res.data.length == 0) {
-            console.log("无结果")
             that.setData({
               reshow: 3
             })
-            console.log("reshow:")
-            console.log(that.data.reshow)
           } else {
-            console.log("有结果")
-            /*that.setData({
-              invitations: []
-            })*/
             that.getKeywords(res.data, "invitations");
             that.setData({
               reshow: 2
             })
-            console.log("reshow:")
-            console.log(that.data.reshow)
           }
           wx.hideLoading();
         }
@@ -91,6 +101,9 @@ Page({
     // 强制刷新
     if (e.currentTarget.dataset.id === "0") {
       this.showall()
+      console.log('广场页面强制刷新：')
+      console.log('广场的所有邀约是：')
+      console.log(this.data.invitations)
     }
   },
   // 滑动改变标签页
@@ -113,7 +126,6 @@ Page({
     wx.request({
       url: 'http://www.triple2.xyz:8081/invitation/findall',
       success: function(res) {
-        console.log(res.data)
         that.getKeywords(res.data, "invitations")
         that.setData({
           reshow: 1
@@ -126,15 +138,20 @@ Page({
   /*发送到invitations并改变keywords*/
   getKeywords: function(resdata, todo) {
     let cpy_invs = resdata && resdata.map(item => {
-      console.log('item.key_words')
-      console.log(item.key_words)
-      
       item.key_words = item.key_words && item.key_words.split(',')
       return item
     })
     this.setData({
       [todo]: cpy_invs
-    })
+    }) 
+    if(todo === 'invitations'){
+      console.log('广场所有邀约是')
+      console.log(this.data.invitations)
+    }
+    else{
+      console.log('我的所有邀约是')
+      console.log(this.data.myinvs)
+    }
   },
   // 下拉刷新不知道做好了没呢
   scroll(event) {
@@ -151,25 +168,17 @@ Page({
     })
     wx.request({
       url: 'http://www.triple2.xyz:8081/invitation/userinvitation',
-
-      /*data: {
-        user_id: app.globalData.user_id
-      },*/
-      // 先强制发送user_id为2，因为app.globalData.user_id还没有呢
       data: {
         user_id: app.globalData.user_id
       },
       success(res) {
-        console.log(res.data)
         if (res.data.length === 0) {
           console.log("该用户还没有发送过自习邀约")
           that.setData({
             empty: 1
           })
-          //this.getKeywords(res.data, "myinvs")
           wx.hideLoading()
         } else {
-
           that.getKeywords(res.data, "myinvs")
           that.setData({
             empty: 0
@@ -182,7 +191,6 @@ Page({
   },
   deleteinv: function(e) {
     let that = this;
-    console.log('点击了删除')
     wx.showModal({
       title: '删除邀约',
       content: '确定删除该邀约？',
@@ -201,13 +209,9 @@ Page({
   },
   _error() {
     let that = this;
-    console.log('点击了取消')
-
   },
   _success() {
     let that = this;
-    console.log('点击了确定')
-    // 这里的函数还没完善
     that._deleteinv();
 
   },
@@ -219,19 +223,11 @@ Page({
         invitation_id: invitation_id
       },
       success: function(res) {
-        console.log("删除inviID为" + invitation_id + "index为" + index + "的元素")
         let c_myinvs = that.data.myinvs;
-        console.log("原来")
-        console.log(c_myinvs)
-
         c_myinvs.splice(index, 1);
-        console.log("splice后")
-        console.log(c_myinvs)
         that.setData({
           myinvs: c_myinvs
         })
-        console.log("setData后")
-        console.log(that.data.myinvs)
         wx.showToast({
           title: '删除成功',
           duration: 2000,
@@ -242,29 +238,28 @@ Page({
     })
   },
   // 查看
-  lookInv(e) {
-    console.log('点击了查看')
-    let sex = (e.currentTarget.dataset.sex === '男') ? (sex = 0) : (sex = 1);
-    let osex = (e.currentTarget.dataset.osex === '男') ? (osex = 0) : (osex = 1);
+  runlookInv(e) {
+    let sex = (e.currentTarget.dataset.sex === '男') ? 0 : 1;
+    let osex = (e.currentTarget.dataset.osex === '男') ? 0 : 1;
     this.setData({
-      illustration: e.currentTarget.dataset.illu,
-      key1: e.currentTarget.dataset.keywords[0],
-      key2: e.currentTarget.dataset.keywords[1],
-      key3: e.currentTarget.dataset.keywords[2],
-      user_name: e.currentTarget.dataset.uname,
-      major: e.currentTarget.dataset.major,
-      contact_information: e.currentTarget.dataset.contact,
-      sex: sex,
-      opposite_sex: osex,
-      invitation_id: e.currentTarget.dataset.id
+      lookInv: {
+        illustration: e.currentTarget.dataset.illu,
+        key1: e.currentTarget.dataset.keywords[0],
+        key2: e.currentTarget.dataset.keywords[1],
+        key3: e.currentTarget.dataset.keywords[2],
+        user_name: e.currentTarget.dataset.uname,
+        major: e.currentTarget.dataset.major,
+        contact_information: e.currentTarget.dataset.contact,
+        sex,
+        opposite_sex: osex,
+      }
     })
     this.setData({
       lookHidden: false
     })
   },
   // 关闭
-  closeInv(){
-    console.log('点击了关闭')
+  closeInv() {
     this.setData({
       lookHidden: true
     })
@@ -272,50 +267,63 @@ Page({
   },
   // 编辑
   editinv(e) {
-    
-    let sex = (e.currentTarget.dataset.sex === '男') ? (sex=0) : (sex=1);
-    let osex = (e.currentTarget.dataset.osex === '男') ? (osex = 0) : (osex = 1);
+    let sex = e.currentTarget.dataset.sex;
+    sex = ( sex === '男') ? 0 : 1;
+    let osex = e.currentTarget.dataset.osex;
+    osex = (osex === '男') ? 0: 1
     this.setData({
-      illustration: e.currentTarget.dataset.illu,
-      key1: e.currentTarget.dataset.keywords[0],
-      key2: e.currentTarget.dataset.keywords[1],
-      key3: e.currentTarget.dataset.keywords[2],
-      user_name: e.currentTarget.dataset.uname,
-      major: e.currentTarget.dataset.major,
-      contact_information: e.currentTarget.dataset.contact,
-      sex: sex,
-      opposite_sex: osex,
-      invitation_id: e.currentTarget.dataset.id
+      upInv: {
+        illustration: e.currentTarget.dataset.illu,
+        key1: e.currentTarget.dataset.keywords[0],
+        key2: e.currentTarget.dataset.keywords[1],
+        key3: e.currentTarget.dataset.keywords[2],
+        user_name: e.currentTarget.dataset.uname,
+        major: e.currentTarget.dataset.major,
+        contact_information: e.currentTarget.dataset.contact,
+        sex: sex,
+        opposite_sex: osex,
+        invitation_id: e.currentTarget.dataset.id
+      }
     })
+    console.log("更新--待更新的该条原邀约是：")
+    console.log(this.data.upInv)
     this.setData({
       editHidden: false
     })
   },
   // 编辑邀约
-  rerelease(invitation_id){
-    if (!this.data.illustration ||
-      !this.data.user_name ||
-      !this.data.major ||
-      !this.data.contact_information) {
-      console.log('if里')
+  edit_no(){
+    this.setData({
+      editHidden: true
+    })
+  },
+  rerelease(invitation_id) {
+    if (!this.data.upInv.illustration ||
+      !this.data.upInv.user_name ||
+      !this.data.upInv.major ||
+      !this.data.upInv.contact_information) {
       wx.showToast({
         title: '除关键词外，其余不能为空',
         icon: 'none'
       })
     } else {
+      let sex = (this.data.upInv.sex==0)?'男':'女';
+      let opposite_sex = (this.data.upInv.opposite_sex) ? '男' :'女';
       wx.request({
         url: 'http://www.triple2.xyz:8081/invitation/updata',
         data: {
-          invitation_id: this.data.invitation_id,
-          user_name: this.data.user_name,
-          sex: this.data.sex,
-          major: this.data.major,
-          opposite_sex: this.data.opposite_sex,
-          illustration: this.data.illustration,
-          key_words: this.joinkeywords(),
-          contact_information: this.data.contact_information
+          invitation_id: this.data.upInv.invitation_id,
+          user_name: this.data.upInv.user_name,
+          sex,
+          major: this.data.upInv.major,
+          opposite_sex,
+          illustration: this.data.upInv.illustration,
+          key_words: this.joinkeywords(this.data.upInv),
+          contact_information: this.data.upInv.contact_information
         },
         success: (res) => {
+          console.log("更新--更新成功后我的所有邀约是")
+          this.getmyinvs();
           wx.showToast({
             title: '修改成功',
             icon: 'success'
@@ -323,139 +331,211 @@ Page({
           this.setData({
             editHidden: true
           });
-          this.clearInputEvent();
-          this.showall();
-          this.getmyinvs();
         }
       })
-
     }
   },
   // 添加邀约
-  myadd: function () {
+  myadd: function() {
+
     this.setData({
       addHidden: false
     });
   },
   add_yes: function(event) {
-    /*console.log("姓名：" + this.data.user_name + "专业：" + this.data.user_major + "联系方式：" + user_phoneNumber);*/
-    console.log("点了发布");
     this.release();
   },
   add_no: function() {
-    console.log("点了取消");
     this.setData({
       addHidden: true
     });
   },
-  
+
 
   get_words: function(event) {
+    let key = 'addInv.illustration'
     this.setData({
-      illustration: event.detail.value
+      [key]: event.detail.value
     })
   },
-  get_user_name: function(event) {
+  _get_words: function (event) {
+    let key = 'upInv.illustration'
     this.setData({
-      user_name: event.detail.value
+      [key]: event.detail.value
     })
   },
-  get_major: function(event) {
-    this.setData({
-      major: event.detail.value
-    })
-  },
-  get_contact: function(event) {
-    this.setData({
-      contact_information: event.detail.value
-    })
-  },
+
   get_key1: function(event) {
+    let key = 'addInv.key1'
     this.setData({
-      key1: event.detail.value
+      [key]: event.detail.value
     })
   },
+  _get_key1: function (event) {
+    let key = 'upInv.key1'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
   get_key2: function(event) {
+    let key = 'addInv.key2'
     this.setData({
-      key2: event.detail.value
+      [key]: event.detail.value
     })
   },
+  _get_key2: function (event) {
+    let key = 'upInv.key2'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
   get_key3: function(event) {
+    let key = 'addInv.key3'
     this.setData({
-      key3: event.detail.value
+      [key]: event.detail.value
     })
   },
+  _get_key3: function (event) {
+    let key = 'upInv.key3'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
+  get_user_name: function(event) {
+    let key = 'addInv.user_name'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+  _get_user_name: function (event) {
+    let key = 'upInv.user_name'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
+  get_major: function(event) {
+    let key = 'addInv.major'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
+  _get_major: function (event) {
+    let key = 'upInv.major'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
+  get_contact: function(event) {
+    let key = 'addInv.contact_information'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+  _get_contact: function (event) {
+    let key = 'upInv.contact_information'
+    this.setData({
+      [key]: event.detail.value
+    })
+  },
+
   check_opposite_sex: function(event) {
     var that = this;
-    var sex = event.currentTarget.dataset.index
+    let key = 'addInv.opposite_sex'
     that.setData({
-      opposite_sex: sex
+      [key]: event.detail.value
     })
   },
-  check_sex: function(event) {
+  _check_opposite_sex: function (event) {
     var that = this;
-    var sex = event.currentTarget.dataset.index
+    var sex = event.detail.value
+    let key = 'upInv.opposite_sex'
     that.setData({
-      sex: sex
+      [key]: sex
+    })
+  },
+
+  check_sex: function(event) {
+    var that = this; 
+    let key = 'addInv.sex'
+    that.setData({
+      [key]: event.detail.value
+    })
+  },
+  _check_sex: function (event) {
+    var that = this;
+    var sex = event.detail.value
+    let key = 'upInv.sex'
+    that.setData({
+      [key]: sex
     })
   },
 
   //清除所填数据
-  clearInputEvent: function(res) {
+  clearInputEvent: function() {
     this.setData({
-      illustration: '',
-      key1:'',
-      key2: '',
-      key3: '',
-      user_name: '',
-      major: '',
-      contact_information: '',
-      sex: 0,
-      opposite_sex: 0
+      addInv: {
+        illustration: '',
+        key1: '',
+        key2: '',
+        key3: '',
+        user_name: '',
+        major: '',
+        contact_information: '',
+        sex: 0,
+        opposite_sex: 0,
+      }
     })
   },
-  joinkeywords(){
+  joinkeywords(obj) {
     let key_words = [];
-    if (this.data.key1) {
-      key_words.push(this.data.key1)
+    if (obj.key1) {
+      key_words.push(obj.key1)
     }
-    if (this.data.key2) {
-      key_words.push(this.data.key2)
+    if (obj.key2) {
+      key_words.push(obj.key2)
     }
-    if (this.data.key3) {
-      key_words.push(this.data.key3)
+    if (obj.key3) {
+      key_words.push(obj.key3)
     }
     key_words = key_words.join(',');
     return key_words;
   },
   //提交信息到后台
   release: function() {
-    if (!this.data.illustration ||
-      !this.data.user_name ||
-      !this.data.major ||
-      !this.data.contact_information) {
-        console.log('if里')
-        wx.showToast({
-          title: '除关键词外，其余不能为空',
-          icon: 'none'
-        })
+    if (!this.data.addInv.illustration ||
+      !this.data.addInv.user_name ||
+      !this.data.addInv.major ||
+      !this.data.addInv.contact_information) {
+      wx.showToast({
+        title: '除关键词外，其余不能为空',
+        icon: 'none'
+      })
     } else {
-      console.log('else里')
-      let key_words = this.joinkeywords();
+      let key_words = this.joinkeywords(this.data.addInv);
 
-      let sex = this.data.sex ? '女' : '男'
-      let opposite_sex = this.data.opposite_sex ? '女' : '男'
+      let sex = this.data.addInv.sex ? '女' : '男'
+
+      let opposite_sex = this.data.addInv.opposite_sex
+      opposite_sex = (opposite_sex == 0) ? '男' : '女'
+
+
       wx.request({
         url: 'http://www.triple2.xyz:8081/invitation/setinvitation',
         data: {
           user_id: app.globalData.user_id,
-          user_name: this.data.user_name,
+          user_name: this.data.addInv.user_name,
           sex,
-          major: this.data.major,
+          major: this.data.addInv.major,
           opposite_sex,
-          illustration: this.data.illustration,
+          illustration: this.data.addInv.illustration,
           key_words,
-          contact_information: this.data.contact_information
+          contact_information: this.data.addInv.contact_information
         },
         success: () => {
           wx.showToast({
@@ -466,8 +546,11 @@ Page({
             addHidden: true
           });
           this.clearInputEvent();
+          console.log('发布后：')
           this.showall();
+          
           this.getmyinvs();
+          
         }
       })
     }
@@ -476,20 +559,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  checkLogin() {
+    if (!app.globalData.logined) {
+      wx.navigateTo({
+        url: '/pages/index/index',
+      })
+      console.log('未登录，跳转页面')
+    }
+  },
   onLoad: function(options) {
     var that = this;
-
-    // 获取系统信息
-    wx.getSystemInfo({
-      success: function(res) {
-        that.setData({
-          winWidth: res.windowWidth,
-          winHeight: res.windowHeight
-        });
-      }
-    });
-    console.log(that.data.winHeight)
-    console.log(that.data.winWidth)
+    // 检查登录与否
+    that.checkLogin();
     wx.stopPullDownRefresh() //刷新完成后停止下拉刷新动效
   },
 
@@ -508,7 +589,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    console.log(this.data.reshow)
+    console.log('onshow时：')
     this.showall();
     this.getmyinvs();
   },

@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd3cd46b-6449-4238-9924-a2f8a3942aec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/GoClass/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/GoClassApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/InvitationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/ScheduleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/controller/WXLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/Invitation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/Schedule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/model/WXSessionModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/InvitationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/ScheduleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/InvitationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/ScheduleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/InvitationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/ScheduleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/AppUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/HttpClientUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/HttpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/IMoocJSONResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/JsonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/java/com/weixin/demo/util/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,7 +18,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="312">
               <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
             </state>
           </provider>
@@ -84,9 +48,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="907" />
-    <option name="width" value="940" />
-    <option name="height" value="1093" />
+    <option name="x" value="906" />
+    <option name="width" value="941" />
+    <option name="height" value="1094" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -94,87 +58,64 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
+              <item name="goClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="goClass" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="GoClass" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="weixin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="项目" type="b2602c69:ProjectViewProjectNode" />
-              <item name="项目" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="GoClass" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="weixin" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,7 +124,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560165535923" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wxapp-little-shelf" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -217,6 +158,7 @@
       <workItem from="1559621901195" duration="1264000" />
       <workItem from="1560159503943" duration="379000" />
       <workItem from="1560161573738" duration="1012000" />
+      <workItem from="1560755218424" duration="54000" />
     </task>
     <task id="LOCAL-00001" summary="查空教室页面，待重构、添加背景">
       <created>1560161725659</created>
@@ -250,20 +192,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2842000" />
+    <option name="totallyTimeSpent" value="2896000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1681" height="993" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.25670242" />
-      <window_info active="true" id="Structure" order="1" sideWeight="0.5021097" side_tool="true" visible="true" weight="0.25670242" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955595" visible="true" weight="0.2563791" />
+      <window_info id="Structure" order="1" sideWeight="0.5044405" side_tool="true" visible="true" weight="0.2563791" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -272,10 +212,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32777116" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32896304" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -317,7 +258,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/GoClass/src/test/java/com/weixin/demo/GoClassApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
+        <state relative-caret-position="312">
           <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
         </state>
       </provider>

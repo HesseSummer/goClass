@@ -73,7 +73,28 @@
   align-items: center;
   align-content: center;
 }
+/*覆盖*/
 button::after {
   border: none;
   margin: 0;
+}
+/* 未选中的样式 */
+radio .wx-radio-input {
+    width: 28rpx;
+    height: 28rpx;
+    border-radius: 50%;     /* 圆角 */
+    /* border: 2rpx solid red; */
+}
+
+/* 选中后 背景及勾 的样式 */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    width: 28rpx;
+    height: 28rpx;
+    border-radius: 50%;     /* 圆角 */
+    line-height: 28rpx;
+    text-align: center;
+    font-size: 30rpx;       /* 勾大小 */
+    color: #fff;			/* 白色勾  */
+
+    transform: translate(-50%, -50%) scale(1);
 }

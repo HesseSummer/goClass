@@ -17,7 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let that = this;
+   /* let that = this;
     wx.getSetting({
       success: function(res) {
         // 如果用户已经授权过，此时global里已存有user_id，只需GET到用户的所有信息
@@ -32,7 +32,7 @@ Page({
           console.log("尚未得到user_id")
         }
       }
-    })
+    })*/
   },
   bindGetUserInfo: function(e) {
     wx.showLoading({
@@ -41,7 +41,6 @@ Page({
     if (e.detail.userInfo) {
       let that = this;
       /*user_name*/
-      console.log(e.detail.userInfo)
       console.log("nickName: " + e.detail.userInfo.nickName);
       /*user_id*/
       wx.login({
@@ -60,11 +59,20 @@ Page({
             success: res => {
               console.log("success")
               if(res.statusCode == 200){
+                console.log(res)
+                app.globalData.user_id = res.data.user_id;
+                app.globalData.user_name = e.detail.userInfo.nickName;
+                wx.setStorageSync('user_id', res.data.user_id);
+                wx.setStorageSync('user_name', e.detail.userInfo.nickName);
+                wx.setStorageSync('loginFlag', res.data.skey)
+                let loginFlag = wx.getStorageSync('loginFlag')
+                console.log(loginFlag)
+                app.globalData.logined = true;
+
                 console.log("用户的user_id: ");
-                app.globalData.user_id = res.data;//格式
                 console.log(app.globalData.user_id)
                 wx.switchTab({
-                  url: '/pages/freeroom/freeroom',
+                  url: '/pages/invitations/invitations',
                 })
                 wx.hideLoading();
               }
