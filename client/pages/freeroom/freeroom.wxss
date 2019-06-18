@@ -106,3 +106,41 @@
   line-height: 28px;
   color: white;
 }
+
+
+/*签名模块*/
+.sign-container{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  justify-content: center;  
+  width: 100%;
+}
+.my-sign{
+  border-bottom: 1px solid #333;
+  width: 300px;
+  padding: 4px;
+}
+.sign-placeholder{
+  font-size: 14px;
+}
+.sign-image{
+  width: 30px;
+  height: 30px;
+}
+
+/*便签*/
+.note-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  font-size: 16px;
+}
+.my-note{
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 8px;
+}
+.note-placeholder{
+  font-size: 14px;
+}
