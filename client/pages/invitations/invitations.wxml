@@ -160,26 +160,26 @@
   </swiper-item>
 </swiper>
 <button bindtap='myadd'>
-  <image src='../../images/add.png' class='bt-add'></image>
+  <image src='../../images/add1.png' class='bt-add'></image>
 </button>
 <!--发布邀约-->
 <modal hidden="{{addHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='add_yes' bindcancel='add_no' class='invmodal'>
   <view class='wrapper-modal'>
 
-    <view class='newillu'>
+    <view class='newillu win-2'>
       <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindblur='get_words' value="{{addInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
-        <view class='w-input'>
+        <view class='w-input win-1'>
           <input bindblur='get_key1' value="{{addInv.key1}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-2'>
           <input bindblur='get_key2' value="{{addInv.key2}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-1'>
           <input bindblur='get_key3' value="{{addInv.key3}}"></input>
         </view>
       </view>
@@ -188,21 +188,21 @@
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-2'>
         <input bindblur='get_user_name' value="{{addInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-1'>
         <input bindblur='get_major' value="{{addInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-2'>
         <input bindblur='get_contact' value="{{addInv.contact_information}}"></input>
       </view>
     </view>
@@ -242,20 +242,20 @@
 <modal hidden="{{editHidden}}" title='自习邀约' cancel-text='取消' confirm-text='发布' bindconfirm='rerelease' bindcancel='edit_no' class='invmodal'>
   <view class='wrapper-modal'>
 
-    <view class='newillu'>
+    <view class='newillu win-2'>
       <textarea placeholder-class="place-holder" placeholder='请输入邀约内容...' bindblur='_get_words' value="{{upInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
-        <view class='w-input'>
+        <view class='w-input win-1'>
           <input bindblur='_get_key1' value="{{upInv.key1}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-2'>
           <input bindblur='_get_key2' value="{{upInv.key2}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-1'>
           <input bindblur='_get_key3' value="{{upInv.key3}}"></input>
         </view>
       </view>
@@ -264,21 +264,21 @@
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-2'>
         <input bindblur='_get_user_name' value="{{upInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-1'>
         <input bindblur='_get_major' value="{{upInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-2'>
         <input bindblur='_get_contact' value="{{upInv.contact_information}}"></input>
       </view>
     </view>
@@ -320,20 +320,20 @@
 <modal hidden="{{lookHidden}}" title='自习邀约' no-cancel='true' confirm-text='关闭' class='invmodal' bindconfirm='closeInv'>
   <view class='wrapper-modal'>
 
-    <view class='newillu'>
+    <view class='newillu win-1'>
       <textarea disabled placeholder-class="place-holder" placeholder='请输入邀约内容...' value="{{lookInv.illustration}}" maxlength="300"></textarea>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>关键词：</text>
       <view class='newcontent flex-row'>
-        <view class='w-input'>
+        <view class='w-input win-2'>
           <input disabled value="{{lookInv.key1}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-1'>
           <input disabled value="{{lookInv.key2}}"></input>
         </view>
-        <view class='w-input'>
+        <view class='w-input win-2'>
           <input disabled value="{{lookInv.key3}}"></input>
         </view>
       </view>
@@ -342,21 +342,21 @@
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>姓名：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-1'>
         <input disabled value="{{lookInv.user_name}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>专业：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-2'>
         <input disabled value="{{lookInv.major}}"></input>
       </view>
     </view>
 
     <view class='newwrapper flex-row'>
       <text class='newtitle'>联系方式：</text>
-      <view class='newcontent w-input'>
+      <view class='newcontent w-input win-1'>
         <input disabled value="{{lookInv.contact_information}}"></input>
       </view>
     </view>
@@ -365,10 +365,10 @@
       <text class='newtitle'>本人性别：</text>
       <view class='newcontent'>
         <radio-group class="radio-box" bindchange='check_sex'>
-          <label class="radio">
+          <label class="radio disradio">
             <radio disabled value="0" checked="{{!lookInv.sex}}"/>男
           </label>
-          <label class="radio">
+          <label class="radio disradio">
             <radio disabled value="1" checked="{{lookInv.sex}}"/>女
           </label>
         </radio-group>
@@ -379,10 +379,10 @@
       <text class='newtitle'>期望性别：</text>
       <view class='newcontent'>
         <radio-group class="radio-box" bindchange='check_opposite_sex'>
-          <label class="radio">
+          <label class="radio disradio">
             <radio disabled value="0" checked="{{!lookInv.opposite_sex}}"/>男
           </label>
-          <label class="radio">
+          <label class="radio disradio">
             <radio disabled value="1" checked="{{lookInv.opposite_sex}}"/>女
           </label>
         </radio-group>

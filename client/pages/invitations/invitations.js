@@ -345,7 +345,7 @@ Page({
       })
     } else {
       let sex = (this.data.upInv.sex==0)?'男':'女';
-      let opposite_sex = (this.data.upInv.opposite_sex) ? '男' :'女';
+      let opposite_sex = (this.data.upInv.opposite_sex==0) ? '男' :'女';// 这里没修改原来
       wx.request({
         url: 'http://www.triple2.xyz:8081/invitation/updata',
         data: {

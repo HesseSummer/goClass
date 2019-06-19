@@ -2,55 +2,70 @@
 @import "iconfont.wxss";
 
 /**app.wxss**/
+
 .bg-blue {
   background-color: #add8e6;
 }
+
 .bg-gray {
   background-color: #e7e4e4;
 }
+
 .bg-green {
   background-color: #00c777;
 }
+
 .bg-black {
-  background-color: #333333;
+  background-color: #333;
 }
-.t-white{
+
+.t-white {
   color: white;
 }
+
 .t-green {
   color: #00c777;
 }
+
 .t-blue {
   color: #b9dceb;
 }
+
 .t-black {
-  color: #333333;
+  color: #333;
 }
+
 .t-gray {
   color: gray;
 }
+
 .border-gray {
   color: #c5c3c3;
 }
+
 .hint {
   margin-top: 5px;
   text-align: right;
   font-size: 12px;
-  text-decoration:underline;
+  text-decoration: underline;
 }
+
 /*甜甜圈loading start*/
+
 @keyframes donut-spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 .donut {
   height: 60rpx;
   width: 60rpx;
-  border: 4rpx solid #333333;
+  border: 4rpx solid #333;
   border-radius: 50%;
   animation: donut-spin 0.5s linear infinite;
 }
@@ -62,39 +77,59 @@
   justify-content: flex-start;
   align-content: flex-start;
 }
+
 .flex-row {
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
 }
+
 .flex-mid {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
+
 /*覆盖*/
+
 button::after {
   border: none;
   margin: 0;
 }
+
 /* 未选中的样式 */
+
 radio .wx-radio-input {
-    width: 28rpx;
-    height: 28rpx;
-    border-radius: 50%;     /* 圆角 */
-    /* border: 2rpx solid red; */
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%; /* 圆角 *//* border: 2rpx solid red; */
 }
 
 /* 选中后 背景及勾 的样式 */
-radio .wx-radio-input.wx-radio-input-checked::before {
-    width: 28rpx;
-    height: 28rpx;
-    border-radius: 50%;     /* 圆角 */
-    line-height: 28rpx;
-    text-align: center;
-    font-size: 30rpx;       /* 勾大小 */
-    color: #fff;			/* 白色勾  */
 
-    transform: translate(-50%, -50%) scale(1);
+radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%; /* 圆角 */
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 30rpx; /* 勾大小 */
+  color: #fff; /* 白色勾  */
+  border: 1px solid #ffcb6b;
+  background-color: #ffcb6b;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.disradio radio .wx-radio-input.wx-radio-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%; /* 圆角 */
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 30rpx; /* 勾大小 */
+  color: #fff; /* 白色勾  */
+  background-color: #e8e9e9;
+  border: 1px solid #e8e9e9;
+  transform: translate(-50%, -50%) scale(1);
 }

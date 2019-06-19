@@ -65,17 +65,17 @@
   <view>
   <!--我的个性签名-->
   <view class='flex-row sign-container'>
-    <view class='flex-row'>
-      <input class='my-sign' placeholder-style='sign-placeholder' placeholder='你的个性签名' value="{{motto}}" type='text' confirm-type='done' bindconfirm='sign_yes' bindblur='sign_yes'></input>
+    <view class='my-sign'>
+      <input placeholder-style='sign-placeholder' placeholder='写下激励你的一句话吧...' value="{{motto}}" type='text' confirm-type='done' bindconfirm='sign_yes' bindblur='sign_yes'></input>
     </view>
-    <view class='flex-row'>
+    <view>
       <image class='sign-image'src='../../images/sign.png'></image>
     </view>
   </view>
 
   <!--便签功能-->
   <view class='note-container'>
-    <textarea class='my-note' placeholder-style='note-placeholder' placeholder='便签：在这里可以记录你想要保存的信息' value="{{note}}" auto-height='true' show-confirm-bar='true' adjust-position='true' bindconfirm='note_yes' bindblur='note_yes'></textarea>
+    <textarea class='my-note' placeholder-style='note-placeholder' placeholder='便签：在这里记录你想要保存的信息，如选定的教室' value="{{note}}" auto-height='true' show-confirm-bar='true' adjust-position='true' bindconfirm='note_yes' bindblur='note_yes'></textarea>
   </view>
   </view>
 </view>

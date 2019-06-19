@@ -116,16 +116,18 @@
   width: 100%;
 }
 .my-sign{
+  width: 100%;
   border-bottom: 1px solid #333;
-  width: 300px;
-  padding: 4px;
+}
+.my-sign input{
+  width: 100%;
 }
 .sign-placeholder{
   font-size: 14px;
 }
 .sign-image{
-  width: 30px;
-  height: 30px;
+  width: 45rpx;
+  height: 45rpx;
 }
 
 /*便签*/
@@ -140,6 +142,8 @@
   border: 1px solid #333;
   border-radius: 4px;
   padding: 8px;
+  min-height: 20px;
+  width: 100%;
 }
 .note-placeholder{
   font-size: 14px;

@@ -220,6 +220,11 @@
   position: fixed;
   bottom: 10rpx;
   right: 10rpx;
+  border: 1px solid #00b26a;
+  border-radius: 50%;
+  box-shadow: 0 6px 10px #b5b4b4;
+  
+  
 }
 /*.invmodal {
   background: lightblue;
@@ -227,23 +232,33 @@
 /*发布邀约*/
 .wrapper-modal {
   font-size: 14px;
+  color: #4d5674;
 }
 .newillu {
   height: 300rpx;
   font-size: 14px;
-  border: 1px solid #888888;
   border-radius: 2px;
 } 
 .newillu textarea{
   width: 100%;
+  height: 100%;
+  overflow: scroll;
 }
 .place-holder {
   margin: 5px;
 }
 .w-input {
-  border-bottom: 1px solid #888888;
   margin-left: 8px;
 }
+.win-1{
+  background-color: #e0edf6;
+  border-bottom: 2px solid #b1c9ee;
+}
+.win-2{
+  background-color: #e2eaed;
+  border-bottom: 2px solid #bdcad6;
+}
+
 
 .newwrapper {
   align-items: flex-end;
