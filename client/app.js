@@ -29,8 +29,8 @@ App({
           let user_id = wx.getStorageSync('user_id');
           let user_name = wx.getStorageSync('user_name');
           if (user_id) {
-            that.globalData.user_id = JSON.parse(user_id);
-            that.globalData.user_name = JSON.parse(user_name);
+            that.globalData.user_id = user_id;
+            that.globalData.user_name = user_name;
           } else {
             console.log('登录缓存--信息缺失');
           }
