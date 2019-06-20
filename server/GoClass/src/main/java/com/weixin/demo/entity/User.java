@@ -15,9 +15,15 @@ public class User {
     private String motto;
     private String open_id;
     private String session_key;
+    private String note;
 
+    public String getNote() {
+        return note;
+    }
 
-
+    public void setNote(String note) {
+        this.note = note;
+    }
 
     public int getUser_id() {
         return user_id;

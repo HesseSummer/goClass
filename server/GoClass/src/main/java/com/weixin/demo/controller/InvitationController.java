@@ -56,7 +56,6 @@ public class InvitationController {
     @GetMapping(value = "/searchall")
     List<Invitation> GetByAllInfo(@Param("key") String key)
     {
-
         return invitationService.Search(key);
     }
 }
