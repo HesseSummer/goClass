@@ -23,16 +23,42 @@ public class UserController {
         return "Hello User.";
     }
 
-
-
     @RequestMapping("/userdata")
     public List<User> getUserdata(String open_id){
         return userService.findByOpenid(open_id);
     }
 
     @RequestMapping("/setuserdata")
-    void setuser(@Param("open_id") String open_id,String user_name,String sex,String major,String sdept,String motto)
+    void setuser(@Param("user_id") int user_id,@Param("user_name") String user_name,@Param("sex") String sex,@Param("major") String major,@Param("sdept") String sdept)
     {
-        userService.UpdateUserData(open_id,user_name,sex,major,sdept,motto);
+        userService.UpdateUserData(user_id,user_name,sex,major,sdept);
     }
+
+    @RequestMapping("/setmotto")
+    public void SetMotto(@Param("user_id") int user_id,@Param("motto") String motto)
+    {
+        userService.UpdataMotto(user_id,motto);
+    }
+
+    @RequestMapping("/setnote")
+    public void SetLabel(@Param("user_id") int user_id,@Param("note") String note)
+    {
+        userService.UpdataNote(user_id,note);
+    }
+
+    @RequestMapping("/setsex")
+    void setsex(@Param("user_id") int user_id,@Param("sex") String sex){
+        userService.UpdateSex(user_id,sex);
+    }
+
+    @RequestMapping("/setsdept")
+    void setsdept(@Param("user_id") int user_id,@Param("sdept") String sdept){
+        userService.UpdateSdept(user_id,sdept);
+    }
+
+    @RequestMapping("/setmajor")
+    public void setmajor(@Param("user_id") int user_id,@Param("major") String major){
+        userService.UpdateMajor(user_id,major);
+    }
+
 }

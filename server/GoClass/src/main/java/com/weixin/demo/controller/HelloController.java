@@ -9,7 +9,8 @@ public class HelloController {
     public String Hello()
     {
         System.out.println("Hello,Triple2");
-        System.out.println("Hello，101");
+
+
         return "Hello,Triple2";
     }
 }

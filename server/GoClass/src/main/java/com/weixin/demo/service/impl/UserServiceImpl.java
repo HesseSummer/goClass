@@ -51,23 +51,33 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByOpenid(open_id);
     }
 
-    public void UpdataUserName(@Param("open_id") String open_id,@Param("user_name") String user_name) {
+    public void UpdataUserName(@Param("open_id") String open_id,@Param("user_name") String user_name)
+    {
         userRepository.UpdataUserName(open_id,user_name);
     }
-    public void UpdataMajor(@Param("open_id") String open_id,@Param("major") String major) {
-        userRepository.UpdataMajor(open_id,major);
+    public void UpdataMotto(@Param("user_id") int user_id,@Param("motto") String motto){
+        userRepository.UpdataMotto(user_id,motto);
     }
-    public void UpdataSex(@Param("open_id") String open_id,@Param("sex") String sex) {
-        userRepository.UpdataSex(open_id,sex);
-    }
-    public void UpdataSdept(@Param("open_id") String open_id,@Param("sdept") String sdept) {
-        userRepository.UpdataSdept(open_id,sdept);
-    }
-    public void UpdataMotto(@Param("open_id") String open_id,@Param("motto") String motto){
-        userRepository.UpdataMotto(open_id,motto);
-}
 
-    public void UpdateUserData(@Param("open_id") String open_id,@Param("user_name") String user_name,@Param("major") String major,@Param("sex") String sex,@Param("sdept") String sdept,@Param("motto") String motto){
-        userRepository.UpdateUserData(open_id,user_name,major,sex,sdept,motto);
+    public void UpdataNote(@Param("user_id") int user_id,@Param("note") String note)
+    {
+        userRepository.UpdataNote(user_id,note);
     }
+
+    public void UpdateUserData(@Param("user_id") int user_id,@Param("user_name") String user_name,@Param("major") String major,@Param("sex") String sex,@Param("sdept") String sdept){
+        userRepository.UpdateUserData(user_id,user_name,major,sex,sdept);
+    }
+
+    public void UpdateMajor(@Param("user_id") int user_id,@Param("major") String major) {
+        userRepository.UpdateMajor(user_id,major);
+    }
+
+    public void UpdateSex(@Param("user_id") int user_id,@Param("sex") String sex) {
+        userRepository.UpdateSex(user_id,sex);
+    }
+
+    public void UpdateSdept(@Param("user_id") int user_id,@Param("sdept") String sdept) {
+        userRepository.UpdateSdept(user_id,sdept);
+    }
+
 }
